@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"@sanity/client": "^7.10.0",
+		"@sanity/code-input": "^6.0.1",
 		"@sanity/image-url": "^1.2.0",
 		"@vercel/kv": "^1.0.1",
 		"highlight.js": "^11.9.0",
@@ -20,5 +21,8 @@
 		"react-dom": "^19.1.1",
 		"sanity": "^4.6.0",
 		"sass": "^1.69.5"
+	},
+	"devDependencies": {
+		"@sanity/vision": "^4.6.0"
 	}
 }
