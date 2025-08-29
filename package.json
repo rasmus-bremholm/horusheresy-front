@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"@sanity/client": "^7.10.0",
+		"@sanity/image-url": "^1.2.0",
 		"@vercel/kv": "^1.0.1",
 		"highlight.js": "^11.9.0",
 		"next": "^15.5.2",
