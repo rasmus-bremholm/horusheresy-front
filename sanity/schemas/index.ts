@@ -1,14 +1,13 @@
 // schemas/index.js - Main schema export file
-import docPage from "./docPage";
+
 import apiEndpoint from "./apiEndpoint";
-import endpointCategory from "./endPointCategory";
+import endpointCategory from "./endpointCategory";
 import parameter from "./parameter";
 import apiResponse from "./apiResponse";
 import codeExample from "./codeExample";
 
-export const schemaTypes = [
+export default [
 	// Documents
-	docPage,
 	apiEndpoint,
 	endpointCategory,
 
