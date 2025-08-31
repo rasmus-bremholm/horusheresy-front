@@ -5,11 +5,13 @@ import endpointCategory from "./endpointCategory";
 import parameter from "./parameter";
 import apiResponse from "./apiResponse";
 import codeExample from "./codeExample";
+import docPage from "./docPage";
 
 export default [
 	// Documents
 	apiEndpoint,
 	endpointCategory,
+	docPage,
 
 	// Objects
 	parameter,
