@@ -1,6 +1,37 @@
 // Variables
-$color-primary: #1d1d1d;
-$color-secondary: #fcfcfc;
+$color-black: #1d1d1d; // primary
+$color-white: #fcfcfc; // secondary
+$color-gray-50: #f9fafb;
+$color-gray-100: #f3f4f6;
+$color-gray-200: #e5e7eb;
+$color-gray-300: #d1d5db;
+$color-gray-400: #9ca3af;
+$color-gray-500: #6b7280;
+$color-gray-600: #4b5563;
+$color-gray-700: #374151;
+$color-gray-800: #1f2937;
+$color-gray-900: #111827;
+
+// Semantic Colors
+$color-primary: $color-black;
+$color-secondary: $color-white;
+$color-background: $color-white;
+$color-surface: $color-gray-50;
+$color-border: $color-gray-200;
+$color-text-primary: $color-gray-900;
+$color-text-secondary: $color-gray-600;
+$color-text-muted: $color-gray-400;
+
+// HTTP Method Colors (minimal accent colors)
+$color-get: #059669; // Green for GET
+$color-post: #0891b2; // Blue for POST
+$color-put: #ea580c; // Orange for PUT
+$color-delete: #dc2626; // Red for DELETE
+$color-patch: #7c3aed; // Purple for PATCH
+
+$color-success: #059669; // 2xx responses
+$color-warning: #d97706; // 4xx responses
+$color-error: #dc2626; // 5xx responses
 
 // Text Sizes
 $font-size-p: 16px;
