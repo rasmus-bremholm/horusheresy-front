@@ -1,7 +1,7 @@
 import { defineType, defineField, validation } from "sanity";
 
 export default defineType({
-	name: "newsPage",
+	name: "newsArticle",
 	title: "News Article",
 	type: "document",
 	fields: [
