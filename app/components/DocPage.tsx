@@ -3,15 +3,13 @@ import Divider from "./Divider";
 import styles from "../api-docs/api-docs.module.scss";
 import { types } from "sass";
 import { TypedObject } from "sanity";
+import type { DocPage } from "../lib/types";
 
 interface DocPageProps {
-	docpage: {
-		title: string;
-		content: TypedObject | TypedObject[];
-	};
+	docpage: DocPage;
 }
 
-export default function DocPage({ docpage }) {
+export default function DocPage({ docpage }: DocPageProps) {
 	const { title, content } = docpage;
 
 	const components = {

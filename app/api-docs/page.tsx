@@ -1,5 +1,5 @@
 import styles from "./api-docs.module.scss";
-
+import { NewsItem, ApiEndPoint, AllContentQuery } from "../lib/types";
 import { DOC_NEWS_ENDPOINT_QUERY } from "../lib/queries";
 import { client } from "../lib/sanity";
 import EndPoint from "../components/EndPoint";
@@ -7,7 +7,7 @@ import DocPage from "../components/DocPage";
 import NewsPage from "../components/NewsPage";
 
 export default async function Apidocs() {
-	const data = await client.fetch(DOC_NEWS_ENDPOINT_QUERY, {}, { next: { revalidate: 30 } });
+	const data: AllContentQuery = await client.fetch(DOC_NEWS_ENDPOINT_QUERY, {}, { next: { revalidate: 30 } });
 
 	console.log(data);
 

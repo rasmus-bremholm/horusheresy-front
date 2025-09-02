@@ -1,15 +1,7 @@
 import { PortableText } from "next-sanity";
 import styles from "../api-docs/api-docs.module.scss";
 import { TypedObject } from "sanity";
-
-interface NewsItem {
-	_id: string;
-	title;
-	string;
-	content: TypedObject | TypedObject[];
-	publishedAt: string;
-	featured: boolean;
-}
+import { NewsItem } from "../lib/types";
 
 interface NewsPageProps {
 	news: NewsItem[];
@@ -32,7 +24,7 @@ export default function NewsPage({ news }: NewsPageProps) {
 				<details>
 					<summary>View all news</summary>
 					{olderNews.map((item) => (
-						<div>
+						<div key={item._id}>
 							<h4>{item.title}</h4>
 							<PortableText value={item.content} />
 						</div>
