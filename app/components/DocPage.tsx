@@ -2,6 +2,14 @@ import { PortableText } from "next-sanity";
 import Divider from "./Divider";
 import styles from "../api-docs/api-docs.module.scss";
 import { types } from "sass";
+import { TypedObject } from "sanity";
+
+interface DocPageProps {
+	docpage: {
+		title: string;
+		content: TypedObject | TypedObject[];
+	};
+}
 
 export default function DocPage({ docpage }) {
 	const { title, content } = docpage;

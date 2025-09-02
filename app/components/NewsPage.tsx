@@ -1,13 +1,26 @@
 import { PortableText } from "next-sanity";
-import Divider from "./Divider";
 import styles from "../api-docs/api-docs.module.scss";
+import { TypedObject } from "sanity";
 
-export default function NewsPage({ news }) {
+interface NewsItem {
+	_id: string;
+	title;
+	string;
+	content: TypedObject | TypedObject[];
+	publishedAt: string;
+	featured: boolean;
+}
+
+interface NewsPageProps {
+	news: NewsItem[];
+}
+
+export default function NewsPage({ news }: NewsPageProps) {
 	const latestNews = news[0];
 	const olderNews = news.slice(1);
 
 	return (
-		<section>
+		<section className={styles.newsSection}>
 			<h2>NEWS</h2>
 			{latestNews && (
 				<div>

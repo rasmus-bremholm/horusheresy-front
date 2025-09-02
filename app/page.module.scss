@@ -1,3 +1,4 @@
+@import "./styles/mixins";
 @import "./styles/variables";
 
 .main {
@@ -39,9 +40,7 @@
 	border: 1px solid $color-primary;
 	padding: 1rem 3rem;
 	margin-bottom: 2rem;
-	&:hover {
-		background-color: darken($color-secondary, 10%);
-	}
+	@include hover-darken;
 }
 
 .featuresGrid {
@@ -54,7 +53,5 @@
 }
 .bold {
 	font-weight: bold;
-	&:hover {
-		color: lighten($color-primary, 40%);
-	}
+	@include hover-lighten;
 }
