@@ -1,0 +1,41 @@
+@import '../mixins';
+
+// Base card for both feature and legion cards
+.cardBase {
+  @include card-base;
+  @include hover-darken;
+}
+
+// Feature Card Specific
+.featureCard {
+  @extend .cardBase;
+  height: 300px;
+  padding: 1rem 4rem;
+}
+
+// Legion Card Specific
+.legionCard {
+  @extend .cardBase;
+  justify-content: flex-end;
+  height: 350px;
+  padding: 1rem 3rem;
+  position: relative;
+}
+
+.legionNumber {
+  font-size: 2rem;
+  line-height: 3rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 2rem;
+  z-index: 3;
+}
+
+.legionName {
+  z-index: 2;
+}
+
+.legionImageContainer {
+  position: relative;
+  z-index: 0;
+}

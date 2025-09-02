@@ -1,0 +1,43 @@
+@import 'variables';
+
+// Flex Layout Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  @include flex-center;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  @include flex-center;
+  flex-direction: row;
+}
+
+// Card Base Mixin
+@mixin card-base {
+  border: 1px solid $color-primary;
+  border-radius: 0.3rem;
+  @include flex-column;
+}
+
+// Interactive Elements
+@mixin hover-darken {
+  &:hover {
+    background-color: darken($color-secondary, 10%);
+  }
+}
+
+@mixin hover-lighten {
+  &:hover {
+    color: lighten($color-primary, 40%);
+  }
+}
+
+// Layout Helpers
+@mixin container-padding {
+  padding: 1rem 15%;
+}

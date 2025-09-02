@@ -1,0 +1,6 @@
+@import "../mixins";
+
+.bold {
+	font-weight: bold;
+	@include hover-lighten;
+}
