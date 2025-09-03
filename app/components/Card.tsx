@@ -1,7 +1,12 @@
 import styles from "./Card.module.scss";
 import Image from "next/image";
 
-export default function Card({ id, name, url }) {
+interface CardProps {
+	id: number;
+	name: string;
+}
+
+export default function Card({ id, name }: CardProps) {
 	return (
 		<div className={styles.card}>
 			<h2 className={styles.legionName}>{name}</h2>

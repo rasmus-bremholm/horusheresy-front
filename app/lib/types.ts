@@ -44,9 +44,14 @@ export interface Legion {
 	colors?: LegionColors;
 }
 
-
 export interface LegionColors {
 	primary: string;
 	secondary: string;
 	accent: string;
+}
+
+export interface FeatureCardProps {
+	cardTitle: string;
+	cardImgUrl: string;
+	cardDesc: string;
 }

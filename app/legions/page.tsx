@@ -23,7 +23,7 @@ export default async function Legions() {
 			<section className={styles.cardSection}>
 				{legions.map((legion) => (
 					<Link key={legion.id} href={`/legions/${legion.id}`}>
-						<Card key={legion.id} id={legion.id} name={legion.name} />
+						<Card id={legion.id} name={legion.name} />
 					</Link>
 				))}
 			</section>

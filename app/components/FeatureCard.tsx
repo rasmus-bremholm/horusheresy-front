@@ -1,7 +1,8 @@
 import styles from "./FeatureCard.module.scss";
 import Image from "next/image";
+import type { FeatureCardProps } from "../lib/types";
 
-export default function FeatureCard({ cardTitle, cardImgUrl, cardDesc }) {
+export default function FeatureCard({ cardTitle, cardImgUrl, cardDesc }: FeatureCardProps) {
 	return (
 		<div className={styles.card}>
 			<Image src={cardImgUrl} height={100} width={100} alt='feature icon' />
