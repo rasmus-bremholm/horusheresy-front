@@ -1,12 +1,11 @@
 import Link from "next/link";
 import Card from "../components/Card";
-import getLegions from "../lib/getLegions";
+import getLegions from "../lib/getLegion";
 import styles from "./legions.module.scss";
 
 export const metadata = {
 	title: "Horus Heresy API Examples",
-	description:
-		"Welcome to the Horus Heresy API. A restful API for everything Horus Heresy!",
+	description: "Welcome to the Horus Heresy API. A restful API for everything Horus Heresy!",
 };
 
 export default async function Legions() {
@@ -17,8 +16,7 @@ export default async function Legions() {
 		<main className={styles.main}>
 			<h1>Legions Page</h1>
 			<p>
-				Here you will find all the active legions beeing used from the API For
-				moore info on how this was achived, please visit the{" "}
+				Here you will find all the active legions beeing used from the API For moore info on how this was achived, please visit the{" "}
 				<Link href='/api-docs'>API Documentation.</Link>
 			</p>
 			<section className={styles.cardSection}>
