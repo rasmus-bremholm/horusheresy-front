@@ -44,6 +44,7 @@ export interface Legion {
 	colors?: LegionColors;
 }
 
+
 export interface LegionColors {
 	primary: string;
 	secondary: string;

@@ -1,5 +1,5 @@
 import styles from "../legions.module.scss";
-import getLegion from "@/app/lib/getLegion";
+import getLegion from "../../lib/getLegion";
 import Image from "next/image";
 
 export default async function LegionDetails({ params: { id } }) {
