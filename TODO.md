@@ -1,0 +1,10 @@
+- [] Finish Typescript Conversion of all files.
+    - [] Legions/page.tsx
+    - [] FrontPage
+    - [] Layout
+- [] CSS for Sanity Components (page,endpoint, docpage, newspage)
+- [ ] Complete parameter/response documentation (ie add the paramters and example response from Sanity to render in frontend.)
+- [] Color Data for legions. Have it render somewhere on the /legions/[id] page.
+- [] Resume CSS work. (maybe 1.0.1 release)
+- [] Move Traitor to a query parameter for /api/legions ?
+- [] Expand API with primarch endpoint?

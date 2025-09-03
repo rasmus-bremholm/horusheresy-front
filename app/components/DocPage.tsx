@@ -1,8 +1,5 @@
 import { PortableText } from "next-sanity";
-import Divider from "./Divider";
 import styles from "../api-docs/api-docs.module.scss";
-import { types } from "sass";
-import { TypedObject } from "sanity";
 import type { DocPage } from "../lib/types";
 
 interface DocPageProps {
@@ -14,7 +11,7 @@ export default function DocPage({ docpage }: DocPageProps) {
 
 	const components = {
 		types: {
-			code: ({ value }) => (
+			code: ({ value }: any) => (
 				<pre style={{ background: "#f4f4f4", padding: "1rem", borderRadius: "8px", overflow: "auto" }}>
 					<code className={`language-${value.language}`}>{value.code}</code>
 				</pre>

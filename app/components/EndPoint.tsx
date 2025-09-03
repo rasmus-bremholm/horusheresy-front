@@ -2,15 +2,10 @@ import { PortableText } from "next-sanity";
 import Divider from "./Divider";
 import styles from "../api-docs/api-docs.module.scss";
 import { TypedObject } from "sanity";
+import { ApiEndPoint } from "../lib/types";
 
 interface EndPointProps {
-	endpoint: {
-		title: string;
-		method: string;
-		path: string;
-		description: TypedObject | TypedObject[];
-		funfacts: TypedObject | TypedObject[];
-	};
+	endpoint: ApiEndPoint;
 }
 
 export default function EndPoint({ endpoint }: EndPointProps) {

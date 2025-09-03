@@ -33,3 +33,19 @@ export interface AllContentQuery {
 	news: NewsItem[];
 	endpoints: ApiEndPoint[];
 }
+
+export interface Legion {
+	id: number;
+	name: string;
+	description: string;
+	primarch: string;
+	traitor: boolean;
+	homeworld: string;
+	colors?: LegionColors;
+}
+
+export interface LegionColors {
+	primary: string;
+	secondary: string;
+	accent: string;
+}
