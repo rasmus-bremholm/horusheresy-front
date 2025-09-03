@@ -6,6 +6,6 @@ export const DOC_NEWS_ENDPOINT_QUERY = `{
     _id, title, summary, content, publishedAt
   },
   "endpoints": *[_type == "apiEndpoint"] | order(order asc) {
-    _id, title, method, path, description, funfacts, category->{title}
+    _id, title, method, path, description, funfacts, category->{title}, parameters, responses, codeExamples
   }
 }`;

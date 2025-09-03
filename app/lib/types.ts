@@ -10,6 +10,9 @@ export interface ApiEndPoint {
 	category?: {
 		title: string;
 	};
+	parameters: TypedObject | TypedObject[];
+	responses: TypedObject | TypedObject[];
+	codeExamples: TypedObject | TypedObject[];
 }
 
 export interface NewsItem {

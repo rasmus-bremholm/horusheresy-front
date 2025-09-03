@@ -9,7 +9,7 @@ interface EndPointProps {
 }
 
 export default function EndPoint({ endpoint }: EndPointProps) {
-	const { title, method, path, description, funfacts } = endpoint;
+	const { title, method, path, description, funfacts, parameters, responses, codeExamples } = endpoint;
 
 	return (
 		<>
