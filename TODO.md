@@ -2,7 +2,7 @@
     - [x] Legions/page.tsx
     - [x] FrontPage
     - [x] Layout
-    - [ ] Api routehandlers
+    - [x] Api routehandlers
 - [ ] CSS for Sanity Components (page,endpoint, docpage, newspage)
 - [ ] Complete parameter/response documentation (ie add the paramters and example response from Sanity to render in frontend.)
 - [ ] Color Data for legions. Have it render somewhere on the /legions/[id] page.
