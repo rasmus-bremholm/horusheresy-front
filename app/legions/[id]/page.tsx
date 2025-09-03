@@ -3,12 +3,13 @@ import getLegion from "../../lib/getLegion";
 import Image from "next/image";
 
 interface PageProps {
-	params: {
+	params: Promise<{
 		id: string;
-	};
+	}>;
 }
 
-export default async function LegionDetails({ params: { id } }: PageProps) {
+export default async function LegionDetails({ params }: PageProps) {
+	const { id } = await params;
 	const legion = await getLegion(id);
 	return (
 		<main className={styles.legionMain}>
