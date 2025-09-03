@@ -2,7 +2,13 @@ import styles from "../legions.module.scss";
 import getLegion from "../../lib/getLegion";
 import Image from "next/image";
 
-export default async function LegionDetails({ params: { id } }) {
+interface PageProps {
+	params: {
+		id: string;
+	};
+}
+
+export default async function LegionDetails({ params: { id } }: PageProps) {
 	const legion = await getLegion(id);
 	return (
 		<main className={styles.legionMain}>
@@ -15,9 +21,11 @@ export default async function LegionDetails({ params: { id } }) {
 					<div className={styles.info}>Primarch: {legion.primarch}</div>
 				</div>
 			</div>
-			<div className={styles.imageContainer}>
-				<Image src={legion.primarch_image_url} width={400} height={400} alt={legion.primarch} />
-			</div>
+			{legion.image && (
+				<div className={styles.imageContainer}>
+					<Image src={legion.image} width={400} height={400} alt={legion.primarch} />
+				</div>
+			)}
 		</main>
 	);
 }

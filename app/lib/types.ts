@@ -42,12 +42,22 @@ export interface Legion {
 	traitor: boolean;
 	homeworld: string;
 	colors?: LegionColors;
+	size: number;
+	characters: Characters[] | null;
+	quote: string | null;
+	battlecry: string | null;
+	img_thumb: string | null;
+	image: string | "";
 }
 
 export interface LegionColors {
 	primary: string;
 	secondary: string;
 	accent: string;
+}
+
+export interface Characters {
+	name: string;
 }
 
 export interface FeatureCardProps {
