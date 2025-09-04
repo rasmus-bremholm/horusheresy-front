@@ -29,6 +29,11 @@ export default function EndPoint({ endpoint }: EndPointProps) {
 						<PortableText value={funfacts} />
 					</div>
 				)}
+				{parameters && parameters.length > 0 && (
+					<div>
+						
+					</div>
+				)}
 			</div>
 			<Divider />
 		</>

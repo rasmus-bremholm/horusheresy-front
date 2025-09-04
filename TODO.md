@@ -1,4 +1,4 @@
-- [ ] Finish Typescript Conversion of all files.
+- [x] Finish Typescript Conversion of all files.
     - [x] Legions/page.tsx
     - [x] FrontPage
     - [x] Layout
