@@ -10,15 +10,15 @@ export interface ApiEndPoint {
 	category?: {
 		title: string;
 	};
-	parameters: Parameter | Parameter[];
-	responses?: TypedObject | TypedObject[];
-	codeExamples?: TypedObject | TypedObject[];
+	parameters?: Parameter[];
+	responses?: ApiResponse[];
+	codeExamples?: CodeExample[];
 }
 
 export interface Parameter {
 	name: string;
 	type: string;
-	location: Record<"Path" | "Query" | "Header", string>;
+	location: string;
 	required: boolean;
 	description: string;
 	example: string;
@@ -33,6 +33,12 @@ export interface ApiResponse {
 		code: string;
 		filename?: string;
 	};
+}
+
+export interface CodeExample {
+	language: string;
+	title: string;
+	code: string;
 }
 
 export interface NewsItem {
