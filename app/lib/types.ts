@@ -10,9 +10,29 @@ export interface ApiEndPoint {
 	category?: {
 		title: string;
 	};
-	parameters: TypedObject | TypedObject[];
-	responses: TypedObject | TypedObject[];
-	codeExamples: TypedObject | TypedObject[];
+	parameters: Parameter | Parameter[];
+	responses?: TypedObject | TypedObject[];
+	codeExamples?: TypedObject | TypedObject[];
+}
+
+export interface Parameter {
+	name: string;
+	type: string;
+	location: Record<"Path" | "Query" | "Header", string>;
+	required: boolean;
+	description: string;
+	example: string;
+}
+
+export interface ApiResponse {
+	statusCode: number;
+	description: string;
+	example: {
+		_type: "code";
+		language: string;
+		code: string;
+		filename?: string;
+	};
 }
 
 export interface NewsItem {

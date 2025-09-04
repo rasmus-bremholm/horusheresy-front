@@ -1,7 +1,6 @@
 import { PortableText } from "next-sanity";
 import Divider from "./Divider";
 import styles from "../api-docs/api-docs.module.scss";
-import { TypedObject } from "sanity";
 import { ApiEndPoint } from "../lib/types";
 
 interface EndPointProps {
@@ -29,9 +28,12 @@ export default function EndPoint({ endpoint }: EndPointProps) {
 						<PortableText value={funfacts} />
 					</div>
 				)}
-				{parameters && parameters.length > 0 && (
+				{parameters && (
 					<div>
-						
+						<h3>Parameters</h3>
+						<div>
+							
+						</div>
 					</div>
 				)}
 			</div>
