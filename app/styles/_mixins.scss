@@ -44,3 +44,39 @@
 @mixin container-padding {
 	padding: 1rem 15%;
 }
+
+// Codeblocks
+
+@mixin codeBlock {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	max-height: 300px;
+	overflow-y: scroll;
+	box-sizing: border-box;
+	pre {
+		margin: 0;
+		max-height: 100%;
+		white-space: pre-wrap;
+	}
+}
+
+@mixin collapseHeader {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	border-radius: 0;
+	padding: 8px 0;
+	background-color: #f4f4f4;
+	transition: all 0.1s ease-in-out;
+	.expandIcons {
+		flex-grow: 1;
+		display: flex;
+		justify-content: flex-end;
+		padding-right: 16px;
+	}
+	&:hover {
+		//color: $color-gray-500;
+		background-color: #dddddd;
+	}
+}

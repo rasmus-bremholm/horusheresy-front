@@ -19,12 +19,12 @@ export default function EndPoint({ endpoint }: EndPointProps) {
 		<>
 			<div>
 				<h2>{title}</h2>
-				<div>
+				<div className={styles.methodContainer}>
 					<h3 className={styles.method}>{method}</h3>
-					<h3 className={styles.method}>{path}</h3>
+					<h3 className={styles.path}>{path}</h3>
 				</div>
 
-				<div>
+				<div className={styles.endPointDescription}>
 					<PortableText value={description} />
 				</div>
 				{/* Fun Facts Section */}

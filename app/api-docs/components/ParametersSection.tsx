@@ -12,7 +12,9 @@ export default function ParametersSection({ parameter }: ParameterProps) {
 			<div className={styles.parameterHeader}>
 				<code>{parameter.name}</code>
 				<span className={styles.parameterType}>{parameter.type}</span>
-				<span className={`styles.parameterBadge ${parameter.required ? "required" : "optional"}`}>{parameter.required ? "required" : "optional"}</span>
+				<span className={`${styles.parameterBadge} ${parameter.required ? styles.required : styles.optional}`}>
+					{parameter.required ? "required" : "optional"}
+				</span>
 			</div>
 			<div className={styles.parameterDescription}>{parameter.description}</div>
 		</article>

@@ -16,6 +16,7 @@
 	align-items: flex-start;
 	justify-content: center;
 	max-width: 100ch;
+	padding-bottom: 2rem;
 }
 
 .funfactContainer {
@@ -23,8 +24,66 @@
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	color: $color-secondary;
-	background-color: #7dafd8;
-	border-radius: 1rem;
-	padding: 1rem;
+	background-color: #f4f4f4;
+	padding: 8px 1rem;
+	h3 {
+		margin: 8px 0;
+	}
+}
+
+.methodContainer {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	.method {
+		background-color: $color-get;
+		color: $color-gray-100;
+		padding: 8px;
+	}
+}
+
+.article {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.exampleHeader {
+	@include collapseHeader;
+}
+
+.responseHeader {
+	@include collapseHeader;
+}
+
+.responseExample {
+	@include codeBlock;
+}
+.codeExample {
+	padding-top: 8px;
+	@include codeBlock;
+}
+
+.statusCode {
+	padding: 8px;
+	font-size: $font-size-h2;
+	font-weight: 700;
+}
+
+.parameterHeader {
+	display: flex;
+	gap: 16px;
+	margin-bottom: 16px;
+	.parameterType {
+		border: 2px solid $color-primary;
+		padding: 0 8px;
+	}
+	.optional {
+		background-color: $color-primary;
+		color: $color-secondary;
+		padding: 0 8px;
+	}
+	.required {
+		background-color: $color-error;
+		color: $color-secondary;
+	}
 }
