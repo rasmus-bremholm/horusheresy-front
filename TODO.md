@@ -13,3 +13,5 @@
 - [x] Move Traitor to a query parameter for /api/legions ?
 - [ ] Expand API with primarch endpoint?
 - [ ] Expand with more endpoints. (post 1.0.1)
+
+https://docs.x.com/x-api/posts/get-posts-by-ids
