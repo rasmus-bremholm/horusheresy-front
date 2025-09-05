@@ -2,6 +2,7 @@ import { PortableText } from "next-sanity";
 import Divider from "./Divider";
 import styles from "../api-docs/api-docs.module.scss";
 import { ApiEndPoint } from "../lib/types";
+import Code from "./Code";
 
 interface EndPointProps {
 	endpoint: ApiEndPoint;
@@ -58,9 +59,7 @@ export default function EndPoint({ endpoint }: EndPointProps) {
 							</div>
 							{response.example && (
 								<div className={styles.responseExample}>
-									<pre>
-										<code className={`language-${response.example.language}`}>{response.example.code}</code>
-									</pre>
+									<Code text={response.example.code} language={response.example.language}/>
 								</div>
 							)}
 						</article>
