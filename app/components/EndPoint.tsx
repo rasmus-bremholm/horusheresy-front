@@ -29,12 +29,21 @@ export default function EndPoint({ endpoint }: EndPointProps) {
 					</div>
 				)}
 				{parameters && (
-					<div>
+					<section>
 						<h3>Parameters</h3>
-						<div>
-							
-						</div>
-					</div>
+						{parameters.map((param) => (
+							<article key={param.name} className={styles.parameterItem}>
+								<div className={styles.parameterHeader}>
+									<code>{param.name}</code>
+									<span className={styles.parameterType}>{param.type}</span>
+									<span className={`parameterBadge ${param.required ? "required" : "optional"}`}>
+										{param.required ? "required" : "optional"}
+									</span>
+								</div>
+								<div className={styles.parameterDescription}>{param.description}</div>
+							</article>
+						))}
+					</section>
 				)}
 			</div>
 			<Divider />
