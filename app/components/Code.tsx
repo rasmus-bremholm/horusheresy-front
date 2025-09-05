@@ -6,7 +6,10 @@ import json from "highlight.js/lib/languages/json";
 import bash from "highlight.js/lib/languages/bash";
 import python from "highlight.js/lib/languages/python";
 import html from "highlight.js/lib/languages/vbscript-html";
-import "highlight.js/styles/default.css"; // Use the style of your choice
+
+// CSS theme
+import "highlight.js/styles/atom-one-dark.css";
+//import "highlight.js/styles/github.css";
 
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("json", json);
