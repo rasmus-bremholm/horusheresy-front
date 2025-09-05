@@ -22,12 +22,14 @@ export default function EndPoint({ endpoint }: EndPointProps) {
 				<div>
 					<PortableText value={description} />
 				</div>
+				{/* Fun Facts Section */}
 				{funfacts && (
-					<div className={styles.funfactContainer}>
+					<section className={styles.funfactContainer}>
 						<h3>Fun Facts:</h3>
 						<PortableText value={funfacts} />
-					</div>
+					</section>
 				)}
+				{/* Parameters Section */}
 				{parameters && (
 					<section>
 						<h3>Parameters</h3>
@@ -45,6 +47,26 @@ export default function EndPoint({ endpoint }: EndPointProps) {
 						))}
 					</section>
 				)}
+				{/* Responses Section */}
+				<section>
+					<h3>Responses</h3>
+					{responses?.map((response) => (
+						<article key={response.statusCode}>
+							<div className={styles.responseHeader}>
+								<span className={`statusCode status-${Math.floor(response.statusCode / 100)}xx`}>{response.statusCode}</span>
+								<span className={styles.responseDescription}>{response.description}</span>
+							</div>
+							{response.example && (
+								<div className={styles.responseExample}>
+									<pre>
+										<code className={`language-${response.example.language}`}>{response.example.code}</code>
+									</pre>
+								</div>
+							)}
+						</article>
+					))}
+				</section>
+
 			</div>
 			<Divider />
 		</>
