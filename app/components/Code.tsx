@@ -8,8 +8,8 @@ import python from "highlight.js/lib/languages/python";
 import html from "highlight.js/lib/languages/vbscript-html";
 
 // CSS theme
-import "highlight.js/styles/atom-one-dark.css";
-//import "highlight.js/styles/github.css";
+//import "highlight.js/styles/atom-one-dark.css";
+import "highlight.js/styles/github.css";
 
 hljs.registerLanguage("javascript", javascript);
 hljs.registerLanguage("json", json);

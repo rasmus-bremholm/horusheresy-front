@@ -39,7 +39,7 @@ export default function EndPoint({ endpoint }: EndPointProps) {
 								<div className={styles.parameterHeader}>
 									<code>{param.name}</code>
 									<span className={styles.parameterType}>{param.type}</span>
-									<span className={`parameterBadge ${param.required ? "required" : "optional"}`}>
+									<span className={`styles.parameterBadge ${param.required ? "required" : "optional"}`}>
 										{param.required ? "required" : "optional"}
 									</span>
 								</div>
@@ -54,18 +54,34 @@ export default function EndPoint({ endpoint }: EndPointProps) {
 					{responses?.map((response) => (
 						<article key={response.statusCode}>
 							<div className={styles.responseHeader}>
-								<span className={`statusCode status-${Math.floor(response.statusCode / 100)}xx`}>{response.statusCode}</span>
+								<span className={`styles.statusCode status-${Math.floor(response.statusCode / 100)}xx`}>{response.statusCode}</span>
 								<span className={styles.responseDescription}>{response.description}</span>
 							</div>
 							{response.example && (
 								<div className={styles.responseExample}>
-									<Code text={response.example.code} language={response.example.language}/>
+									<Code text={response.example.code} language={"json"} />
 								</div>
 							)}
 						</article>
 					))}
 				</section>
-
+				{/* Examples Section */}
+				{codeExamples && (
+					<section>
+						<h3>Code Examples</h3>
+						{codeExamples.map((example) => (
+							<article key={example.title}>
+								<div className={styles.exampleHeader}>
+									<span>{example.title}</span>
+									<span>{example.language}</span>
+								</div>
+								<div>
+									<Code text={example.code} language={example.language} />
+								</div>
+							</article>
+						))}
+					</section>
+				)}
 			</div>
 			<Divider />
 		</>
