@@ -3,7 +3,7 @@
     - [x] FrontPage
     - [x] Layout
     - [x] Api routehandlers
-- [ ] Break out Responses, Parameters and Code Examples into their own components (for like collapse expand logic.)
+- [x] Break out Responses, Parameters and Code Examples into their own components (for like collapse expand logic.)
     - [ ] Add collapse & Expand Logic (examples and responses should have set hight and scroll.)
     - [x] Syntax Highlighting for codeblocks (Prism.js | Highlight.js)
 - [ ] CSS for Sanity Components (page,endpoint, docpage, newspage)
