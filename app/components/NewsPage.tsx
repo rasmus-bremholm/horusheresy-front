@@ -3,6 +3,10 @@ import styles from "../api-docs/api-docs.module.scss";
 import { TypedObject } from "sanity";
 import { NewsItem } from "../lib/types";
 
+// We want some kind of max height for the news section. And it should expand when clicked on.
+// We also need a border around ech news article.
+// Text needs too fade out when overflowing.
+
 interface NewsPageProps {
 	news: NewsItem[];
 }
