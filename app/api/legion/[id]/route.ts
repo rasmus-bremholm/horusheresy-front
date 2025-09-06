@@ -2,13 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import pool from "../../../lib/database";
 
 interface RouteParams {
-	params: {
-		id: string;
-	};
+	params: Promise<{ id: string }>;
 }
 
 export async function GET(request: NextRequest, { params }: RouteParams) {
-	const legionId = parseInt(params.id, 10);
+	const { id } = await params;
+	const legionId = parseInt(id, 10);
 
 	// Validate ID is a number and in valid range
 	if (isNaN(legionId) || legionId < 1 || legionId > 20) {
