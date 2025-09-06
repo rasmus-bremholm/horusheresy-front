@@ -3,6 +3,7 @@ import styles from "./page.module.scss";
 import Link from "next/link";
 import Divider from "./components/Divider";
 import FeatureCard from "./components/FeatureCard";
+import TryItSection from "./components/TryItSection";
 
 export default function Home() {
 	return (
@@ -26,6 +27,7 @@ export default function Home() {
 				</Link>
 			</div>
 			<Divider />
+			<TryItSection />
 			<section className={styles.features}>
 				<h2>Features</h2>
 				<p>
