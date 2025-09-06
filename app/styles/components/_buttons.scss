@@ -1,0 +1,9 @@
+@import "../mixins";
+
+.button {
+	@include flex-center;
+	@include hover-darken;
+	border: 1px solid $color-primary;
+	padding: 1rem 3rem;
+	margin-bottom: 2rem;
+}

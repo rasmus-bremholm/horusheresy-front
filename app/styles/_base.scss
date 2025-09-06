@@ -1,0 +1,36 @@
+@import "variables";
+
+* {
+	border-radius: 0.3rem;
+	text-wrap: balance;
+}
+
+body {
+	margin: 0;
+	overflow-x: hidden;
+	color: $color-primary;
+	background-color: $color-secondary;
+	text-align: center;
+	font-size: $font-size-p;
+}
+
+a {
+	text-decoration: none;
+	color: $color-primary;
+	font-weight: bold;
+
+	&:visited {
+		text-decoration: none;
+		color: $color-primary;
+	}
+}
+
+h1 {
+	font-size: $font-size-h1;
+	text-transform: uppercase;
+}
+
+h2 {
+	font-size: $font-size-h2;
+	text-transform: uppercase;
+}

@@ -1,0 +1,11 @@
+@import "../mixins";
+
+.main {
+	@include container-padding;
+	@include flex-column;
+}
+
+.footer {
+	@include flex-column;
+	@include container-padding;
+}

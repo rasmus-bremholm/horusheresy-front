@@ -1,0 +1,17 @@
+@import "../mixins";
+
+.header {
+	@include flex-column;
+	width: 60%;
+	text-wrap: balance;
+}
+
+.headerTitle {
+	@include flex-column;
+}
+
+.buttons {
+	@include flex-row;
+	gap: 2rem;
+	margin: 1rem;
+}

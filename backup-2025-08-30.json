@@ -1,0 +1,672 @@
+{
+  "exportedAt": "2025-08-30T07:41:16.091Z",
+  "documents": [
+    {
+      "_createdAt": "2025-08-30T05:58:17Z",
+      "_id": "0486d784-d4b2-4d37-93d2-2ebab21490b3",
+      "_rev": "S5wqqKshdagnobTnuNsOEt",
+      "_type": "endpointCategory",
+      "_updatedAt": "2025-08-30T06:00:10Z",
+      "description": "Everything the user needs to do in order to be able to use the API in their projects.",
+      "order": 1,
+      "slug": {
+        "_type": "slug",
+        "current": "authorization"
+      },
+      "title": "Authorization"
+    },
+    {
+      "_createdAt": "2025-08-30T06:05:17Z",
+      "_id": "15b78c61-3b33-4373-b3e5-4051626650a1",
+      "_rev": "XBGFXMpDh7tc33O1Zlxc7b",
+      "_type": "apiEndpoint",
+      "_updatedAt": "2025-08-30T06:47:09Z",
+      "category": {
+        "_ref": "c961f8d3-6e9b-4f2a-910a-db66a4a89b66",
+        "_type": "reference"
+      },
+      "description": [
+        {
+          "_key": "55136e0d5bb4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e0cfe09fbc32",
+              "_type": "span",
+              "marks": [],
+              "text": "This endpoint is like your \"starting point\". Here you will get it all, a big old list of all the different legions and all the data that goes along with each legion. Data like Primarch, Legion Name their homeworld, size of army and what allegence they had during the end of the Horus Heresy."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "method": "GET",
+      "path": "/api/legions",
+      "responses": [
+        {
+          "_key": "78e35d9001cb",
+          "_type": "apiResponse",
+          "description": "All legions",
+          "example": {
+            "_type": "code",
+            "code": "[\n    {\n        \"id\": 12,\n        \"name\": \"World Eaters\",\n        \"description\": \"The World Eaters are one of the Traitor Legions of Chaos Space Marines who now inhabit the Warp rift known as the Eye of Terror in the Imperium of Man's Segmentum Obscurus.\\r\\n\\r\\nThe World Eaters, originally known as the War Hounds, were also once the XIIth Legion of the twenty First Founding Space Marine Legions, and one of the first to betray the Emperor of Mankind for the service of Chaos and the Warmaster Horus.\",\n        \"primarch\": \"Angron\",\n        \"traitor\": true,\n        \"homeworld\": \"Bodt\",\n        \"colors\": null,\n        \"size\": 150000,\n        \"characters\": null,\n        \"quote\": null,\n        \"battlecry\": \"Blood for the Primarch! Skulls for the Twelfth Legion!\",\n        \"img_thumb\": null,\n        \"image\": null\n    },\n    {\n        \"id\": 2,\n        \"name\": \"[Redacted]\",\n        \"description\": \"...\",\n        \"primarch\": \"N/A\",\n        \"traitor\": true,\n        \"homeworld\": \"N/A\",\n        \"colors\": null,\n        \"size\": 0,\n        \"characters\": null,\n        \"quote\": null,\n        \"battlecry\": null,\n        \"img_thumb\": null,\n        \"image\": null\n    },]"
+          },
+          "statusCode": 200
+        },
+        {
+          "_key": "0dc480f9f00f",
+          "_type": "apiResponse",
+          "description": "Missing API Key",
+          "example": {
+            "_type": "code",
+            "code": "{\n    \"message\": \"Forbidden: Invalid API Key\"\n}"
+          },
+          "statusCode": 403
+        }
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "get-all-legions"
+      },
+      "title": "Get All Legions"
+    },
+    {
+      "_createdAt": "2025-08-30T06:00:27Z",
+      "_id": "2585c8a4-d22b-4d76-88eb-f3aa819d064b",
+      "_rev": "XBGFXMpDh7tc33O1ZlxD6q",
+      "_type": "endpointCategory",
+      "_updatedAt": "2025-08-30T06:01:07Z",
+      "description": "All information about the Primarchs, this will be expanded apon further.",
+      "order": 3,
+      "slug": {
+        "_type": "slug",
+        "current": "primarchs"
+      },
+      "title": "Primarchs"
+    },
+    {
+      "_createdAt": "2025-08-30T06:01:27Z",
+      "_id": "35c60dd0-8b69-4ca0-bad3-bb9c995faf64",
+      "_rev": "XBGFXMpDh7tc33O1ZlxErH",
+      "_type": "endpointCategory",
+      "_updatedAt": "2025-08-30T06:04:00Z",
+      "description": "Future or more complex endpoints.",
+      "slug": {
+        "_type": "slug",
+        "current": "advanced"
+      },
+      "title": "Advanced"
+    },
+    {
+      "_createdAt": "2025-08-29T09:15:27Z",
+      "_id": "b262c76e-0301-4ab3-8073-76e43ed7324b",
+      "_rev": "DVFBs4OHEV7W9NpU9pL4Ca",
+      "_type": "docPage",
+      "_updatedAt": "2025-08-29T09:18:32Z",
+      "content": [
+        {
+          "_key": "9ae277de4bb0",
+          "_type": "code",
+          "code": "const helloWorld = \"Hello World\"",
+          "filename": "into-code",
+          "language": "typescript"
+        },
+        {
+          "_key": "a544c178de34",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1f5f113ee306",
+              "_type": "span",
+              "marks": [],
+              "text": "Introduction Header"
+            }
+          ],
+          "markDefs": [],
+          "style": "h1"
+        },
+        {
+          "_key": "33fbb150860f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "6a18250ac49f",
+              "_type": "span",
+              "marks": [],
+              "text": "Subheading"
+            }
+          ],
+          "markDefs": [],
+          "style": "h2"
+        },
+        {
+          "_key": "7c6f3a52a1b3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "38f18aabd1ff",
+              "_type": "span",
+              "marks": [],
+              "text": ""
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "32638e274930",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "789beb1e0c72",
+              "_type": "span",
+              "marks": [],
+              "text": "Here is the introduction to the api, I like this system. But we need something else."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "53f9b8caa8a5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "db45d48a0123",
+              "_type": "span",
+              "marks": [],
+              "text": "This is a quote!"
+            }
+          ],
+          "markDefs": [],
+          "style": "blockquote"
+        }
+      ],
+      "order": 1,
+      "slug": {
+        "_type": "slug",
+        "current": "introduction"
+      },
+      "title": "Introduction"
+    },
+    {
+      "_createdAt": "2025-08-30T05:56:18Z",
+      "_id": "c961f8d3-6e9b-4f2a-910a-db66a4a89b66",
+      "_rev": "S5wqqKshdagnobTnuNsJcs",
+      "_type": "endpointCategory",
+      "_updatedAt": "2025-08-30T05:58:00Z",
+      "description": "This category contains all methods that has to do with Legion Get's or factions in large.",
+      "order": 2,
+      "slug": {
+        "_type": "slug",
+        "current": "legions"
+      },
+      "title": "Legions"
+    },
+    {
+      "_createdAt": "2025-08-30T06:49:10Z",
+      "_id": "d3c72579-4f09-41be-af0e-37232fa8cb7a",
+      "_rev": "DVFBs4OHEV7W9NpU9qj9Su",
+      "_system": {
+        "base": {
+          "id": "d3c72579-4f09-41be-af0e-37232fa8cb7a",
+          "rev": "DVFBs4OHEV7W9NpU9qiyVg"
+        }
+      },
+      "_type": "apiEndpoint",
+      "_updatedAt": "2025-08-30T07:05:49Z",
+      "category": {
+        "_ref": "c961f8d3-6e9b-4f2a-910a-db66a4a89b66",
+        "_type": "reference"
+      },
+      "description": [
+        {
+          "_key": "bf00d1571d00",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "8a511fe8e3f7",
+              "_type": "span",
+              "marks": [],
+              "text": "To get information about a specific legion you fetch the endpoint /legion/ with the ID of the legion you want at the end."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "5a0fe717a4f5",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b0b0780a9579",
+              "_type": "span",
+              "marks": [],
+              "text": "The id field needs to be populated with a number between 1 and 20. If you go outside this scope you will get an error telling you that the legion dosnt excist. "
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6eef5929b7b3",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "23b56e5f86a2",
+              "_type": "span",
+              "marks": [],
+              "text": "I might have to update this to be another http status code, 401 seems appropriate, but now im sure its 500 or something dumb."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "465e3bc6ae7c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "41e4c13bc61e",
+              "_type": "span",
+              "marks": [],
+              "text": "Important: I made sure the ID field corresponds to each Legions \"canonical\" legionnumber instead of beeing just an index. This way the ID becomes a two-in-one get, both legion number and a convinient id to select specific legions."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6f5ff9fbc855",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "44fda5e24a4e",
+              "_type": "span",
+              "marks": [],
+              "text": "For those (plebians) that dosnt know each legions number i have included a list below."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "35d7b06de6e0",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "c20d41cd0aae",
+              "_type": "span",
+              "marks": [],
+              "text": "Dark Angels"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d5ba34af91ec",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "587f3df7c536",
+              "_type": "span",
+              "marks": [],
+              "text": "[Redacted]"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "1e6b0b0f701d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e399028d50ba",
+              "_type": "span",
+              "marks": [],
+              "text": "Emperor's Children"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "b6a8fe3f0022",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "4e9dca9bc845",
+              "_type": "span",
+              "marks": [],
+              "text": "Iron Warriors"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "886e9117a3d4",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e38f9a92a7fa",
+              "_type": "span",
+              "marks": [],
+              "text": "White Scars"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ba552df6d579",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "ab1f7fe60fb1",
+              "_type": "span",
+              "marks": [],
+              "text": "Space Wolves"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "6c0737fbda2f",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e845410ceda0",
+              "_type": "span",
+              "marks": [],
+              "text": "Imperial Fists"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "52bee0e52373",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "b7e54375b1ca",
+              "_type": "span",
+              "marks": [],
+              "text": "Night Lords"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d1bcd4b2b035",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "f48c8579ad13",
+              "_type": "span",
+              "marks": [],
+              "text": "Blood Angels"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "0fd9eee28471",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "7773a4c4613d",
+              "_type": "span",
+              "marks": [],
+              "text": "Iron Hands"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8c62f012623c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "68a8ab7ea03f",
+              "_type": "span",
+              "marks": [],
+              "text": "[UNKNOWN]"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "8ee56ee6989a",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "1dae964ca4a9",
+              "_type": "span",
+              "marks": [],
+              "text": "World Eaters"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "7bec7059890c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "08e533f4a204",
+              "_type": "span",
+              "marks": [],
+              "text": "Ultramarines"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "c5cc5027336d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "af77b070cee4",
+              "_type": "span",
+              "marks": [],
+              "text": "Death Guard"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "d9c6874b1637",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "203f64d23590",
+              "_type": "span",
+              "marks": [],
+              "text": "Thousand Sons"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "e6184926234d",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "855a500fb3f7",
+              "_type": "span",
+              "marks": [],
+              "text": "Sons of Horus (Luna Wolves)"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "a23bdb14b120",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "757ae92307f4",
+              "_type": "span",
+              "marks": [],
+              "text": "Word Bearers"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "aeb2eaaaf3cb",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9f39915a7c64",
+              "_type": "span",
+              "marks": [],
+              "text": "Salamanders"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "2415985b993c",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "9cc13c51b7f4",
+              "_type": "span",
+              "marks": [],
+              "text": "Raven Guard"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        },
+        {
+          "_key": "ff22bd1967ef",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "845cc45e4f31",
+              "_type": "span",
+              "marks": [],
+              "text": "Alpha Legion"
+            }
+          ],
+          "level": 1,
+          "listItem": "number",
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "funfacts": [
+        {
+          "_key": "9f558cffc6b6",
+          "_type": "block",
+          "children": [
+            {
+              "_key": "e20a0cc77e30",
+              "_type": "span",
+              "marks": [],
+              "text": "If you are wondering about entry 2 and 11, those legions where expunged from the Imperial records. So if you see entries such as [redacted], [deleted] or even [unknown] just know i added them for the \"lore friendly\" effect."
+            }
+          ],
+          "markDefs": [],
+          "style": "normal"
+        }
+      ],
+      "method": "GET",
+      "path": "/api/legion/[id]",
+      "responses": [
+        {
+          "_key": "69d4d702c011",
+          "_type": "apiResponse",
+          "description": "OK",
+          "example": {
+            "_type": "code",
+            "code": "{\n    \"id\": 1,\n    \"name\": \"Dark Angels\",\n    \"description\": \"The Dark Angels are considered amongst the most powerful and secretive of the Loyalist Space Marine Chapters. They were the Ist Legion of the original 20 Space Marine Legions to be created during the First Founding of the 30th Millennium.\",\n    \"primarch\": \"Lion el Johnson\",\n    \"traitor\": false,\n    \"homeworld\": \"Caliban\",\n    \"colors\": {\n        \"primary\": \"#004225\",\n        \"secondary\": \"#FFFFFF\",\n        \"accent\": \"#000000\"\n    },\n    \"size\": 200000,\n    \"characters\": null,\n    \"quote\": null,\n    \"battlecry\": \"Repent for tomorrow you die!\",\n    \"img_thumb\": null,\n    \"image\": null\n}"
+          },
+          "statusCode": 200
+        },
+        {
+          "_key": "0721fb92f613",
+          "_type": "apiResponse",
+          "description": "Missing API Key",
+          "example": {
+            "_type": "code",
+            "code": "{\n    \"message\": \"Forbidden: Invalid API Key\"\n}"
+          },
+          "statusCode": 403
+        },
+        {
+          "_key": "87c25235b9d5",
+          "_type": "apiResponse",
+          "description": "Legion not found",
+          "example": {
+            "_type": "code",
+            "code": "{\n    \"message\": \"Legion not found, try 1-20\"\n}"
+          },
+          "statusCode": 404
+        }
+      ],
+      "slug": {
+        "_type": "slug",
+        "current": "get-legion-by-id"
+      },
+      "title": "Get Legion By Id"
+    }
+  ]
+}

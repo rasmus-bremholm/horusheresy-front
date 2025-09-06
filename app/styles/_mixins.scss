@@ -1,0 +1,82 @@
+@use "sass:color";
+@import "variables";
+
+// Flex Layout Mixins
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin flex-column {
+	@include flex-center;
+	flex-direction: column;
+}
+
+@mixin flex-row {
+	@include flex-center;
+	flex-direction: row;
+}
+
+// test
+
+// Card Base Mixin
+@mixin card-base {
+	border: 1px solid $color-primary;
+	border-radius: 0.3rem;
+	@include flex-column;
+}
+
+// Interactive Elements
+@mixin hover-darken {
+	&:hover {
+		background-color: color.adjust($color-secondary, $lightness: -10%);
+	}
+}
+
+@mixin hover-lighten {
+	&:hover {
+		color: color.adjust($color-primary, $lightness: 40%);
+	}
+}
+
+// Layout Helpers
+@mixin container-padding {
+	padding: 1rem 15%;
+}
+
+// Codeblocks
+
+@mixin codeBlock {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	max-height: 300px;
+	overflow-y: scroll;
+	box-sizing: border-box;
+	pre {
+		margin: 0;
+		max-height: 100%;
+		white-space: pre-wrap;
+	}
+}
+
+@mixin collapseHeader {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	border-radius: 0;
+	padding: 8px 0;
+	background-color: #f4f4f4;
+	transition: all 0.1s ease-in-out;
+	.expandIcons {
+		flex-grow: 1;
+		display: flex;
+		justify-content: flex-end;
+		padding-right: 16px;
+	}
+	&:hover {
+		//color: $color-gray-500;
+		background-color: #dddddd;
+	}
+}

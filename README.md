@@ -65,9 +65,9 @@ For deploying this application, you can use Vercel or any other preferred hostin
 ## Built With
 
 -[Next.js](https://nextjs.org/) - Javascript Framework - Frontend
-
 - [Node.js](https://nodejs.org/) - The JavaScript runtime used
-- [Express](https://expressjs.com/) - The web framework for Node.js
+- [Sanity](www.sanity.io) - CMS
+
 
 ## Authors
 

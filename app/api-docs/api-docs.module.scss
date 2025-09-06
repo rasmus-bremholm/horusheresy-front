@@ -1,46 +1,89 @@
 @import "../styles/variables";
+@import "../styles/mixins";
+
 .main {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	@include flex-row;
+	text-align: left;
 	margin-top: 1rem;
 	padding: 4rem;
 	gap: 1rem;
 	line-height: 1.5rem;
 }
-.tocNav {
+
+.endpointContainer {
 	display: flex;
-	flex: 1;
 	flex-direction: column;
 	align-items: flex-start;
-	//height: 100%;
-	max-width: 30%;
-	text-align: left;
-	scroll-behavior: smooth;
-	overflow: visible;
+	justify-content: center;
+	max-width: 100ch;
+	padding-bottom: 2rem;
 }
 
-.listContainer {
-	position: sticky;
-	top: 0;
-}
-
-.content {
+.funfactContainer {
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
-	flex: 3;
-	text-align: left;
-	padding-right: 20%;
-}
-
-.funfact {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
 	align-items: flex-start;
-	background-color: rgba($color: #cedeff2a, $alpha: 1);
-	padding: 1rem 2rem;
-	text-wrap: stable;
-	color: $color-primary;
+	justify-content: center;
+	background-color: #f4f4f4;
+	padding: 8px 1rem;
+	h3 {
+		margin: 8px 0;
+	}
+}
+
+.methodContainer {
+	display: flex;
+	gap: 16px;
+	align-items: center;
+	.method {
+		background-color: $color-get;
+		color: $color-gray-100;
+		padding: 8px;
+	}
+}
+
+.article {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.exampleHeader {
+	@include collapseHeader;
+}
+
+.responseHeader {
+	@include collapseHeader;
+}
+
+.responseExample {
+	@include codeBlock;
+}
+.codeExample {
+	padding-top: 8px;
+	@include codeBlock;
+}
+
+.statusCode {
+	padding: 8px;
+	font-size: $font-size-h2;
+	font-weight: 700;
+}
+
+.parameterHeader {
+	display: flex;
+	gap: 16px;
+	margin-bottom: 16px;
+	.parameterType {
+		border: 2px solid $color-primary;
+		padding: 0 8px;
+	}
+	.optional {
+		background-color: $color-primary;
+		color: $color-secondary;
+		padding: 0 8px;
+	}
+	.required {
+		background-color: $color-error;
+		color: $color-secondary;
+	}
 }

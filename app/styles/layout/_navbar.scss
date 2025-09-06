@@ -1,0 +1,17 @@
+@import "../mixins";
+
+.navbar {
+	border-radius: 0;
+	width: 100%;
+	@include flex-row;
+	justify-content: space-evenly;
+	height: 4rem;
+	background-color: $color-primary;
+}
+
+.navbarLinks {
+	color: $color-secondary;
+	&:hover {
+		color: darken($color-secondary, 20%);
+	}
+}
