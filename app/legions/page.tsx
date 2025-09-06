@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import Link from "next/link";
 import Card from "../components/Card";
 import getLegions from "../lib/getLegions";
