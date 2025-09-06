@@ -1,3 +1,5 @@
+
+### 1.0.0
 - [x] Finish Typescript Conversion of all files.
     - [x] Legions/page.tsx
     - [x] FrontPage
@@ -8,9 +10,12 @@
     - [x] Syntax Highlighting for codeblocks (Prism.js | Highlight.js)
 - [x] CSS for Sanity Components (page,endpoint, docpage, newspage)
 - [x] Complete parameter/response documentation (ie add the paramters and example response from Sanity to render in frontend.)
+- [x] Move Traitor to a query parameter for /api/legions ?
+
+### 1.0.1
+- [ ] Try it button for testing api ( start page )
 - [ ] Color Data for legions. Have it render somewhere on the /legions/[id] page.
 - [ ] Resume CSS work. (maybe 1.0.1 release)
-- [x] Move Traitor to a query parameter for /api/legions ?
 - [ ] Expand API with primarch endpoint?
 - [ ] Expand with more endpoints. (post 1.0.1)
 
