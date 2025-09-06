@@ -1,44 +1,34 @@
 "use client";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
+import { tryEndpoint } from "../lib/actions";
 import Code from "./Code";
 
-export default async function TryItSection() {
-	const [endpoint, setEndpoint] = useState("");
-	const [response, setResponse] = useState(null);
+export default function TryItSection() {
+	const [response, setResponse] = useState<any>(null);
 	const [loading, setLoading] = useState(false);
-	const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
-	const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
+	const handleSubmit = async (formData: FormData) => {
+		console.log("handleSubmit");
 		setLoading(true);
-		try {
-			const res = await fetch(`https://horus-heresy-next.vercel.app/api/${endpoint}`, {
-				method: "GET",
-				headers: {
-					"x-api-key": apiKey,
-				} as HeadersInit,
-			});
-			const data = await res.json();
-			setResponse(data);
-		} catch (error) {
-			throw new Error(`Something went wrong ${error}`);
-		} finally {
-			setLoading(false);
-		}
+		const result = await tryEndpoint(formData);
+		setResponse(result);
+		setLoading(false);
 	};
 
 	return (
 		<section>
 			<h2>Try it!</h2>
-			<form action=''>
-				<label htmlFor='urlInput'>https://horus-heresy-next.vercel.app/api/</label>
-				<input type='text' name='urlInput' id='urlInput' />
+			<form action={handleSubmit}>
+				<label htmlFor='endpoint'>https://horus-heresy-next.vercel.app/api/</label>
+				<input type='text' name='endpoint' id='urlInput' placeholder='legion/13' required />
 				<div className='clipboardButton'></div>
-				<button type='submit'>Submit</button>
+				<button disabled={loading} type='submit'>
+					{loading ? "Loading..." : "Submit"}
+				</button>
 			</form>
 			{response && (
 				<div>
-					<Code text={response} />
+					<Code text={JSON.stringify(response, null, 2)} language='json' />
 				</div>
 			)}
 		</section>
