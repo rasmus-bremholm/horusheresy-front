@@ -1,6 +1,5 @@
 import { PortableText } from "next-sanity";
 import styles from "../api-docs/api-docs.module.scss";
-import { TypedObject } from "sanity";
 import { NewsItem } from "../lib/types";
 
 // We want some kind of max height for the news section. And it should expand when clicked on.
@@ -19,7 +18,7 @@ export default function NewsPage({ news }: NewsPageProps) {
 		<section className={styles.newsSection}>
 			<h2>NEWS</h2>
 			{latestNews && (
-				<div>
+				<div className={styles.newsArticle}>
 					<h3>{latestNews.title}</h3>
 					<PortableText value={latestNews.content} />
 				</div>
