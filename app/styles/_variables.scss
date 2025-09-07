@@ -33,6 +33,30 @@ $color-success: #059669; // 2xx responses
 $color-warning: #d97706; // 4xx responses
 $color-error: #dc2626; // 5xx responses
 
+// Spacing System
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem;   // 16px  
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem;   // 32px
+$spacing-xl: 3rem;   // 48px
+$spacing-2xl: 4rem;  // 64px
+
+// Container & Layout
+$container-padding: 1rem 15%;
+$container-width-sm: 60%;
+$container-width-md: 80%;
+$container-width-lg: 100ch;
+
+// Grid & Layout
+$grid-gap: $spacing-sm;
+$grid-gap-lg: $spacing-lg;
+
+// Component Dimensions
+$navbar-height: 4rem;
+$card-height-sm: 300px;
+$card-height-md: 350px;
+$card-height-lg: 400px;
+
 // Text Sizes
 $font-size-p: 16px;
 $font-size-h1: 32px;

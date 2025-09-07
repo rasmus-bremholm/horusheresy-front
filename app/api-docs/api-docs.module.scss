@@ -4,52 +4,47 @@
 .main {
 	@include flex-row;
 	text-align: left;
-	margin-top: 1rem;
-	padding: 4rem;
-	gap: 1rem;
+	margin-top: $spacing-sm;
+	padding: $spacing-2xl;
+	gap: $grid-gap;
 	line-height: 1.5rem;
 }
 
 .endpointContainer {
-	display: flex;
-	flex-direction: column;
+	@include flex-column;
 	align-items: flex-start;
-	justify-content: center;
-	max-width: 100ch;
-	padding-bottom: 2rem;
+	max-width: $container-width-lg;
+	padding-bottom: $spacing-lg;
 }
 
 .funfactContainer {
-	display: flex;
-	flex-direction: column;
+	@include flex-column;
 	align-items: flex-start;
-	justify-content: center;
-	background-color: #f4f4f4;
-	padding: 8px 1rem;
+	background-color: $color-surface;
+	padding: $spacing-xs $spacing-sm;
 	h3 {
-		margin: 8px 0;
+		margin: $spacing-xs 0;
 	}
 }
 
 .newsArticle {
-	border: 1px solid $color-primary;
-	padding: 1rem;
+	border: 1px solid $color-border;
+	padding: $spacing-sm;
 }
 
 .methodContainer {
 	display: flex;
-	gap: 16px;
+	gap: $spacing-sm;
 	align-items: center;
 	.method {
 		background-color: $color-get;
 		color: $color-gray-100;
-		padding: 8px;
+		padding: $spacing-xs;
 	}
 }
 
 .article {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding: $spacing-sm 0;
 }
 
 .exampleHeader {
@@ -64,31 +59,32 @@
 	@include codeBlock;
 }
 .codeExample {
-	padding-top: 8px;
+	padding-top: $spacing-xs;
 	@include codeBlock;
 }
 
 .statusCode {
-	padding: 8px;
+	padding: $spacing-xs;
 	font-size: $font-size-h2;
 	font-weight: 700;
 }
 
 .parameterHeader {
 	display: flex;
-	gap: 16px;
-	margin-bottom: 16px;
+	gap: $spacing-sm;
+	margin-bottom: $spacing-sm;
 	.parameterType {
 		border: 2px solid $color-primary;
-		padding: 0 8px;
+		padding: 0 $spacing-xs;
 	}
 	.optional {
 		background-color: $color-primary;
 		color: $color-secondary;
-		padding: 0 8px;
+		padding: 0 $spacing-xs;
 	}
 	.required {
 		background-color: $color-error;
 		color: $color-secondary;
+		padding: 0 $spacing-xs;
 	}
 }

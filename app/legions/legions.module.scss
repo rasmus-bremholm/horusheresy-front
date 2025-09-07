@@ -1,45 +1,42 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
 .main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	@include flex-column;
 	width: 100%;
 }
 .legionMain {
-	display: flex;
-	flex-direction: row;
-	padding-left: 15%;
-	padding-right: 15%;
-	margin-bottom: 4rem;
-	margin-top: 4rem;
+	@include flex-row;
+	@include container-padding;
+	margin: $spacing-2xl 0;
 }
 
 .cardSection {
-	padding-left: 15%;
-	padding-right: 15%;
+	@include container-padding;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto;
-	gap: 1rem;
+	gap: $grid-gap;
 }
 
 .legionContainer {
-	display: flex;
-	flex-direction: column;
+	@include flex-column;
 	text-align: left;
-	padding-right: 2rem;
+	padding-right: $spacing-lg;
 	flex: 1;
 }
 
 .imageContainer {
-	border: 1px solid #3333;
-	height: 400px;
-	width: 400px;
+	border: 1px solid $color-border;
+	height: $card-height-lg;
+	width: $card-height-lg;
 	position: relative;
 	overflow: hidden;
 }
 
 .infoContainer {
-	margin-top: 1rem;
+	margin-top: $spacing-sm;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	gap: $grid-gap;
 }

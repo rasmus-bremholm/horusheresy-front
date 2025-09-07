@@ -2,44 +2,30 @@
 @use "./styles/variables" as *;
 
 .main {
-	padding: 1rem 15%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	@include container-padding;
+	@include flex-column;
 }
 
 .header {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 60%;
+	@include flex-column;
+	width: $container-width-sm;
 	text-wrap: balance;
 }
 .headerTitle {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	@include flex-column;
 }
 
 .buttons {
-	display: flex;
-	flex-direction: row;
-	gap: 2rem;
-	justify-content: center;
-	align-items: center;
-	margin: 1rem;
+	@include flex-row;
+	gap: $spacing-lg;
+	margin: $spacing-sm;
 }
 
 .button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex-center;
 	border: 1px solid $color-primary;
-	padding: 1rem 3rem;
-	margin-bottom: 2rem;
+	padding: $spacing-sm $spacing-xl;
+	margin-bottom: $spacing-lg;
 	@include hover-darken;
 }
 
@@ -47,9 +33,9 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto;
-	gap: 1rem;
-	padding-top: 1rem;
-	margin-bottom: 2rem;
+	gap: $grid-gap;
+	padding-top: $spacing-sm;
+	margin-bottom: $spacing-lg;
 }
 .bold {
 	font-weight: bold;

@@ -1,15 +1,9 @@
-@use "sass:color";
 @use "../styles/variables" as *;
+@use "../styles/mixins" as *;
 
 .card {
-	height: 300px;
-	padding: 1rem 4rem;
-	border: 1px solid $color-primary;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	&:hover {
-		background-color: color.adjust($color-secondary, $lightness: -10%);
-	}
+	@include card-base;
+	@include hover-darken;
+	height: $card-height-sm;
+	padding: $spacing-sm $spacing-2xl;
 }
