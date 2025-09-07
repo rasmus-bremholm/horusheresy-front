@@ -1,4 +1,4 @@
-@import "../styles/variables";
+@use "../styles/variables" as *;
 
 .card {
 	border: 1px solid $color-primary;

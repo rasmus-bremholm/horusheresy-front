@@ -1,4 +1,4 @@
-@import "../mixins";
+@use "../mixins" as *;
 
 .bold {
 	font-weight: bold;

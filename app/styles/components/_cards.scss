@@ -1,4 +1,4 @@
-@import '../mixins';
+@use '../mixins' as *;
 
 // Base card for both feature and legion cards
 .cardBase {

@@ -1,4 +1,4 @@
-@import "../app/styles/_variables.scss";
+@use "../app/styles/_variables.scss" as *;
 
 * {
 	border-radius: 0.3rem;

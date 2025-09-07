@@ -1,17 +1,17 @@
 // Base & Configuration
-@import "variables";
-@import "mixins";
-@import "base";
+@use "variables" as *;
+@use "mixins" as *;
+@use "base";
 
 // Layout Components
-@import "layout/header";
-@import "layout/navbar";
-@import "layout/main";
+@use "layout/header";
+@use "layout/navbar";
+@use "layout/main";
 
 // UI Components
-@import "components/buttons";
-@import "components/cards";
+@use "components/buttons";
+@use "components/cards";
 
 // Utilities
-@import "utilities/grid";
-@import "utilities/text";
+@use "utilities/grid";
+@use "utilities/text";

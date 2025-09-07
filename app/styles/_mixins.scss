@@ -1,5 +1,5 @@
 @use "sass:color";
-@import "variables";
+@use "variables" as *;
 
 // Flex Layout Mixins
 @mixin flex-center {
