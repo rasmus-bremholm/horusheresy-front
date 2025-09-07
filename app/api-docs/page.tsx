@@ -4,7 +4,7 @@ import { DOC_NEWS_ENDPOINT_QUERY } from "../lib/queries";
 import { client } from "../lib/sanity";
 import EndPoint from "../components/EndPoint";
 import DocPage from "../components/DocPage";
-import NewsPage from "../components/NewsPage";
+import NewsPage from "../components/NewsArticle";
 import Divider from "../components/Divider";
 
 export default async function Apidocs() {
@@ -16,8 +16,6 @@ export default async function Apidocs() {
 		<main className={styles.main}>
 			<div className={styles.endpointContainer}>
 				{data.docPages[0] && <DocPage docpage={data.docPages[0]} />}
-				<Divider />
-				{data.news.length > 0 && <NewsPage news={data.news} />}
 				<Divider />
 				{data.docPages[1] && <DocPage docpage={data.docPages[1]} />}
 				<Divider />

@@ -1,6 +1,11 @@
 @use "../styles/variables" as *;
 @use "../styles/mixins" as *;
 
+.container {
+	@include flex-column;
+	max-width: $container-width-lg;
+}
+
 .main {
 	@include flex-row;
 	text-align: left;
@@ -49,6 +54,13 @@
 	border: 1px solid $color-border;
 	padding: $spacing-sm;
 }
+.newsHeader {
+	@include flex-row;
+	justify-content: space-between;
+	.time {
+		color: $color-gray-400;
+	}
+}
 
 .methodContainer {
 	display: flex;
@@ -65,7 +77,7 @@
 		background-color: $color-get;
 		color: $color-gray-100;
 		padding: $spacing-xs;
-		
+
 		@include mobile-sm {
 			font-size: 0.9rem;
 		}
@@ -111,7 +123,7 @@
 	.parameterType {
 		border: 2px solid $color-primary;
 		padding: 0 $spacing-xs;
-		
+
 		@include mobile-sm {
 			font-size: 0.85rem;
 		}
@@ -120,7 +132,7 @@
 		background-color: $color-primary;
 		color: $color-secondary;
 		padding: 0 $spacing-xs;
-		
+
 		@include mobile-sm {
 			font-size: 0.85rem;
 		}
@@ -129,7 +141,7 @@
 		background-color: $color-error;
 		color: $color-secondary;
 		padding: 0 $spacing-xs;
-		
+
 		@include mobile-sm {
 			font-size: 0.85rem;
 		}
