@@ -1,50 +1,91 @@
-@import "../styles/variables";
-@import "../styles/mixins";
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.container {
+	@include flex-column;
+	max-width: $container-width-lg;
+}
 
 .main {
 	@include flex-row;
 	text-align: left;
-	margin-top: 1rem;
-	padding: 4rem;
-	gap: 1rem;
+	margin-top: $spacing-sm;
+	padding: $spacing-2xl;
+	gap: $grid-gap;
 	line-height: 1.5rem;
+
+	@include tablet {
+		@include flex-column;
+		padding: $spacing-lg;
+	}
+
+	@include mobile-sm {
+		padding: $spacing-sm;
+		margin-top: 0;
+	}
 }
 
 .endpointContainer {
-	display: flex;
-	flex-direction: column;
+	@include flex-column;
 	align-items: flex-start;
-	justify-content: center;
-	max-width: 100ch;
-	padding-bottom: 2rem;
+	max-width: $container-width-lg;
+	padding-bottom: $spacing-lg;
+
+	@include tablet {
+		max-width: 100%;
+	}
+
+	@include mobile-sm {
+		padding-bottom: $spacing-md;
+	}
 }
 
 .funfactContainer {
-	display: flex;
-	flex-direction: column;
+	@include flex-column;
 	align-items: flex-start;
-	justify-content: center;
-	background-color: #f4f4f4;
-	padding: 8px 1rem;
+	background-color: $color-surface;
+	padding: $spacing-xs $spacing-sm;
 	h3 {
-		margin: 8px 0;
+		margin: $spacing-xs 0;
+	}
+}
+
+.newsArticle {
+	border: 1px solid $color-border;
+	padding: $spacing-sm;
+}
+.newsHeader {
+	@include flex-row;
+	justify-content: space-between;
+	.time {
+		color: $color-gray-400;
 	}
 }
 
 .methodContainer {
 	display: flex;
-	gap: 16px;
+	gap: $spacing-sm;
 	align-items: center;
+
+	@include mobile-sm {
+		@include flex-column;
+		align-items: flex-start;
+		gap: $spacing-xs;
+	}
+
 	.method {
 		background-color: $color-get;
 		color: $color-gray-100;
-		padding: 8px;
+		padding: $spacing-xs;
+
+		@include mobile-sm {
+			font-size: 0.9rem;
+		}
 	}
 }
 
 .article {
-	padding-top: 1rem;
-	padding-bottom: 1rem;
+	padding: $spacing-sm 0;
 }
 
 .exampleHeader {
@@ -59,31 +100,50 @@
 	@include codeBlock;
 }
 .codeExample {
-	padding-top: 8px;
+	padding-top: $spacing-xs;
 	@include codeBlock;
 }
 
 .statusCode {
-	padding: 8px;
+	padding: $spacing-xs;
 	font-size: $font-size-h2;
 	font-weight: 700;
 }
 
 .parameterHeader {
 	display: flex;
-	gap: 16px;
-	margin-bottom: 16px;
+	gap: $spacing-sm;
+	margin-bottom: $spacing-sm;
+	flex-wrap: wrap;
+
+	@include mobile-sm {
+		gap: $spacing-xs;
+	}
+
 	.parameterType {
 		border: 2px solid $color-primary;
-		padding: 0 8px;
+		padding: 0 $spacing-xs;
+
+		@include mobile-sm {
+			font-size: 0.85rem;
+		}
 	}
 	.optional {
 		background-color: $color-primary;
 		color: $color-secondary;
-		padding: 0 8px;
+		padding: 0 $spacing-xs;
+
+		@include mobile-sm {
+			font-size: 0.85rem;
+		}
 	}
 	.required {
 		background-color: $color-error;
 		color: $color-secondary;
+		padding: 0 $spacing-xs;
+
+		@include mobile-sm {
+			font-size: 0.85rem;
+		}
 	}
 }

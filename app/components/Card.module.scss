@@ -1,23 +1,32 @@
-@import "../styles/variables";
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
 
 .card {
-	border: 1px solid $color-primary;
-	display: flex;
-	flex-direction: column;
+	@include card-base;
 	justify-content: flex-end;
-	height: 350px;
-	padding: 1rem 3rem;
+	height: $card-height-md;
+	padding: $spacing-sm $spacing-xl;
 	position: relative;
 
-	// Shadow
+	@include tablet {
+		height: auto;
+		min-height: 280px;
+		padding: $spacing-sm $spacing-lg;
+	}
+
+	@include mobile-sm {
+		height: auto;
+		min-height: 220px;
+		padding: $spacing-md;
+	}
 }
 
 .legionNumber {
 	font-size: 2rem;
 	line-height: 3rem;
 	position: absolute;
-	top: 0.5rem;
-	left: 2rem;
+	top: $spacing-xs;
+	left: $spacing-lg;
 	z-index: 3;
 }
 
@@ -31,4 +40,5 @@
 
 .expunged {
 	transform: scale(0.8);
+	opacity: 0.7;
 }

@@ -1,14 +1,21 @@
-@import "../styles/variables";
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
 
 .card {
-	height: 300px;
-	padding: 1rem 4rem;
-	border: 1px solid $color-primary;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	&:hover {
-		background-color: darken($color-secondary, 10%);
+	@include card-base;
+	@include hover-darken;
+	height: $card-height-sm;
+	padding: $spacing-sm $spacing-2xl;
+
+	@include tablet {
+		padding: $spacing-sm $spacing-lg;
+		height: auto;
+		min-height: 250px;
+	}
+
+	@include mobile-sm {
+		padding: $spacing-md;
+		height: auto;
+		min-height: 200px;
 	}
 }

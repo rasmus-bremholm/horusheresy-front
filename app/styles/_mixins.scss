@@ -1,5 +1,5 @@
 @use "sass:color";
-@import "variables";
+@use "variables" as *;
 
 // Flex Layout Mixins
 @mixin flex-center {
@@ -17,8 +17,6 @@
 	@include flex-center;
 	flex-direction: row;
 }
-
-// test
 
 // Card Base Mixin
 @mixin card-base {
@@ -78,5 +76,36 @@
 	&:hover {
 		//color: $color-gray-500;
 		background-color: #dddddd;
+	}
+}
+
+// Responsive Breakpoint Mixins
+@mixin mobile-xs {
+	@media (max-width: #{$breakpoint-sm - 1px}) {
+		@content;
+	}
+}
+
+@mixin mobile-sm {
+	@media (max-width: #{$breakpoint-md - 1px}) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: #{$breakpoint-lg - 1px}) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width: $breakpoint-lg) {
+		@content;
+	}
+}
+
+@mixin desktop-xl {
+	@media (min-width: $breakpoint-xl) {
+		@content;
 	}
 }

@@ -1,4 +1,4 @@
-@import "../mixins";
+@use "../mixins" as *;
 
 .header {
 	@include flex-column;

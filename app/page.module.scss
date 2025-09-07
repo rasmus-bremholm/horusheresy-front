@@ -1,55 +1,83 @@
-@import "./styles/mixins";
-@import "./styles/variables";
+@use "./styles/mixins" as *;
+@use "./styles/variables" as *;
 
 .main {
-	padding: 1rem 15%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	@include container-padding;
+	@include flex-column;
+
+	@include mobile-sm {
+		padding: $spacing-sm;
+	}
 }
 
 .header {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 60%;
+	@include flex-column;
+	width: $container-width-sm;
 	text-wrap: balance;
+
+	@include tablet {
+		width: 90%;
+	}
+
+	@include mobile-sm {
+		width: 100%;
+	}
 }
+
 .headerTitle {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	@include flex-column;
+
+	h1 {
+		@include mobile-sm {
+			font-size: 1.8rem;
+			text-align: center;
+		}
+	}
 }
 
 .buttons {
-	display: flex;
-	flex-direction: row;
-	gap: 2rem;
-	justify-content: center;
-	align-items: center;
-	margin: 1rem;
+	@include flex-row;
+	gap: $spacing-lg;
+	margin: $spacing-sm;
+
+	@include mobile-sm {
+		@include flex-column;
+		gap: $spacing-sm;
+		width: 100%;
+	}
 }
 
 .button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	@include flex-center;
 	border: 1px solid $color-primary;
-	padding: 1rem 3rem;
-	margin-bottom: 2rem;
+	padding: $spacing-sm $spacing-xl;
+	margin-bottom: $spacing-lg;
 	@include hover-darken;
+
+	@include mobile-sm {
+		margin-bottom: $spacing-sm;
+		padding: $spacing-sm $spacing-lg;
+		width: 100%;
+		max-width: 300px;
+	}
 }
 
 .featuresGrid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto;
-	gap: 1rem;
-	padding-top: 1rem;
-	margin-bottom: 2rem;
+	gap: $grid-gap;
+	padding-top: $spacing-sm;
+	margin-bottom: $spacing-lg;
+
+	@include tablet {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include mobile-sm {
+		grid-template-columns: 1fr;
+		gap: $spacing-md;
+	}
 }
 .bold {
 	font-weight: bold;

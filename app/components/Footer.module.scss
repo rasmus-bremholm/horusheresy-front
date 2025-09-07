@@ -1,7 +1,7 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
 .footer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 1rem 15%;
+	@include flex-column;
+	@include container-padding;
 }

@@ -1,45 +1,93 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
 .main {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	@include flex-column;
 	width: 100%;
 }
 .legionMain {
-	display: flex;
-	flex-direction: row;
-	padding-left: 15%;
-	padding-right: 15%;
-	margin-bottom: 4rem;
-	margin-top: 4rem;
+	@include flex-row;
+	@include container-padding;
+	margin: $spacing-2xl 0;
+
+	@include tablet {
+		@include flex-column;
+		padding: $spacing-sm 8%;
+		margin: $spacing-lg 0;
+	}
+
+	@include mobile-sm {
+		padding: $spacing-sm;
+		margin: $spacing-md 0;
+	}
 }
 
 .cardSection {
-	padding-left: 15%;
-	padding-right: 15%;
+	@include container-padding;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto;
-	gap: 1rem;
+	gap: $grid-gap;
+
+	@include tablet {
+		grid-template-columns: repeat(2, 1fr);
+		padding: $spacing-sm 8%;
+	}
+
+	@include mobile-sm {
+		grid-template-columns: 1fr;
+		padding: $spacing-sm;
+		gap: $spacing-md;
+	}
 }
 
 .legionContainer {
-	display: flex;
-	flex-direction: column;
+	@include flex-column;
 	text-align: left;
-	padding-right: 2rem;
+	padding-right: $spacing-lg;
 	flex: 1;
+
+	@include tablet {
+		padding-right: 0;
+		margin-bottom: $spacing-lg;
+	}
+
+	@include mobile-sm {
+		margin-bottom: $spacing-md;
+	}
 }
 
 .imageContainer {
-	border: 1px solid #3333;
-	height: 400px;
-	width: 400px;
+	border: 1px solid $color-border;
+	height: $card-height-lg;
+	width: $card-height-lg;
 	position: relative;
 	overflow: hidden;
+
+	@include tablet {
+		width: 300px;
+		height: 300px;
+		align-self: center;
+	}
+
+	@include mobile-sm {
+		width: 250px;
+		height: 250px;
+	}
 }
 
 .infoContainer {
-	margin-top: 1rem;
+	margin-top: $spacing-sm;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	gap: $grid-gap;
+
+	@include tablet {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include mobile-sm {
+		grid-template-columns: 1fr;
+		gap: $spacing-xs;
+	}
 }

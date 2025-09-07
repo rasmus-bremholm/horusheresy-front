@@ -1,9 +1,9 @@
+@use "../styles/variables" as *;
+
 .divider {
 	height: 1px;
-	background-color: #333;
-	margin: 1rem 0rem;
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
-	opacity: 30%;
+	background-color: $color-gray-500;
+	margin: $spacing-sm auto;
+	width: $container-width-lg;
+	opacity: 0.3;
 }

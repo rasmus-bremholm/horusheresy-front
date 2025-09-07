@@ -1,4 +1,5 @@
-@import "../mixins";
+@use "sass:color";
+@use "../mixins" as *;
 
 .navbar {
 	border-radius: 0;
@@ -12,6 +13,6 @@
 .navbarLinks {
 	color: $color-secondary;
 	&:hover {
-		color: darken($color-secondary, 20%);
+		color: color.adjust($color-secondary, $lightness: -20%);
 	}
 }

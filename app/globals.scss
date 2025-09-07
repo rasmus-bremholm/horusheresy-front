@@ -1,4 +1,4 @@
-@import "../app/styles/_variables.scss";
+@use "../app/styles/_variables.scss" as *;
 
 * {
 	border-radius: 0.3rem;
@@ -27,8 +27,28 @@ a {
 h1 {
 	font-size: $font-size-h1;
 	text-transform: uppercase;
+	
+	@media (max-width: #{$breakpoint-sm - 1px}) {
+		font-size: 1.8rem;
+	}
+	
+	@media (max-width: #{$breakpoint-xs}) {
+		font-size: 1.6rem;
+	}
 }
+
 h2 {
 	font-size: $font-size-h2;
 	text-transform: uppercase;
+	
+	@media (max-width: #{$breakpoint-sm - 1px}) {
+		font-size: 1.4rem;
+	}
+}
+
+p {
+	@media (max-width: #{$breakpoint-sm - 1px}) {
+		font-size: 0.95rem;
+		line-height: 1.4;
+	}
 }

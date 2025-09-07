@@ -14,6 +14,9 @@ export default function Navbar() {
 			<Link href='/api-docs'>
 				<div className={styles.navbarLinks}>API</div>
 			</Link>
+			<Link href='/news'>
+				<div className={styles.navbarLinks}>NEWS</div>
+			</Link>
 		</nav>
 	);
 }

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { tryEndpoint } from "../lib/actions";
 import Code from "./Code";
+import styles from "./TryItSection.module.scss";
 
 export default function TryItSection() {
 	const [response, setResponse] = useState<any>(null);
@@ -16,7 +17,7 @@ export default function TryItSection() {
 	};
 
 	return (
-		<section>
+		<section className={styles.tryitSection}>
 			<h2>Try it!</h2>
 			<form action={handleSubmit}>
 				<label htmlFor='endpoint'>https://horus-heresy-next.vercel.app/api/</label>
@@ -27,7 +28,7 @@ export default function TryItSection() {
 				</button>
 			</form>
 			{response && (
-				<div>
+				<div className={styles.responseSection}>
 					<Code text={JSON.stringify(response, null, 2)} language='json' />
 				</div>
 			)}
