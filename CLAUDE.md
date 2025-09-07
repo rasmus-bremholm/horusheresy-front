@@ -63,22 +63,18 @@ Uses **SCSS** with a structured approach:
 - `app/styles/utilities/` - Utility classes
 - Component-level `.module.scss` files for scoped styles
 
-#### Current CSS Issues to Address
-1. Convert deprecated `@import` statements to `@use` syntax
-2. Replace deprecated `darken()` and `lighten()` functions with `color.adjust()`
-3. Implement design system variables consistently across components
-4. Add styling for news section with fade-out overflow effect
-5. Clean up component-specific SCSS modules
+#### CSS System Status
+✅ **Completed (v1.0.0):**
+1. ~~Convert deprecated `@import` statements to `@use` syntax~~
+2. ~~Replace deprecated `darken()` and `lighten()` functions with `color.adjust()`~~
+3. ~~Implement design system variables consistently across components~~
+4. ~~Clean up component-specific SCSS modules~~
+5. ~~Add comprehensive responsive breakpoints (XS: 320px, SM: 600px, MD: 900px, LG: 1200px, XL: 1535px)~~
 
-##### File Structure
-- `/app/styles/` - Design system variables and mixins - try your best to follow theese standard.
-- `/app/components/*.module.scss` - Component-specific styles, these are a mess and should be fixed by AI.
-- `/app/api-docs/api-docs.module.scss` - Main documentation styles
-
-##### Priority Tasks
-1. SCSS deprecation warnings cleanup
-2. Consistent spacing and typography
-3. Cleanup and fix the module.scss files.
+##### Current File Structure
+- `/app/styles/` - Clean design system with variables, mixins, and responsive breakpoints
+- `/app/components/*.module.scss` - Now following design system patterns consistently
+- `/app/api-docs/api-docs.module.scss` - Responsive and optimized
 
 #### Design System
 - Black/white minimalist theme
@@ -94,9 +90,27 @@ Required environment variables:
 - `NEXT_PUBLIC_SANITY_PROJECT_ID` - Sanity project ID
 - `NEXT_PUBLIC_SANITY_DATASET` - Sanity dataset (defaults to "production")
 
+## Project Roadmap
+
+### Version 1.0.0 ✅ COMPLETE
+- [x] Finish TypeScript conversion of all files
+- [x] Break out API documentation into Sanity CMS components  
+- [x] Add collapse/expand logic for code examples and responses
+- [x] Implement syntax highlighting (highlight.js)
+- [x] Complete parameter/response documentation from Sanity
+- [x] Move traitor filtering to query parameter (`/api/legions?traitor=true/false`)
+- [x] CSS system overhaul with responsive design
+
+### Version 1.0.1 (Planned)
+- [ ] **Try It button** - Interactive API testing from homepage
+- [ ] **Legion colors** - Display color data on `/legions/[id]` pages  
+- [ ] **Primarch endpoint** - Expand API with dedicated primarch data
+- [ ] **Additional endpoints** - Further API expansion
+
 ### Development Notes
 
-- Project is currently in TypeScript migration (version 1.0.0 complete)
+- TypeScript migration complete (v1.0.0)
 - Uses Inter font family via next/font
 - Vercel deployment ready with caching headers on API routes
 - Sanity Studio accessible at `/studio` for content management
+- Fully responsive design implemented across all breakpoints

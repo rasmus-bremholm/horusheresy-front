@@ -9,6 +9,17 @@
 	@include flex-row;
 	@include container-padding;
 	margin: $spacing-2xl 0;
+
+	@include tablet {
+		@include flex-column;
+		padding: $spacing-sm 8%;
+		margin: $spacing-lg 0;
+	}
+
+	@include mobile-sm {
+		padding: $spacing-sm;
+		margin: $spacing-md 0;
+	}
 }
 
 .cardSection {
@@ -17,6 +28,17 @@
 	grid-template-columns: repeat(3, 1fr);
 	grid-template-rows: auto;
 	gap: $grid-gap;
+
+	@include tablet {
+		grid-template-columns: repeat(2, 1fr);
+		padding: $spacing-sm 8%;
+	}
+
+	@include mobile-sm {
+		grid-template-columns: 1fr;
+		padding: $spacing-sm;
+		gap: $spacing-md;
+	}
 }
 
 .legionContainer {
@@ -24,6 +46,15 @@
 	text-align: left;
 	padding-right: $spacing-lg;
 	flex: 1;
+
+	@include tablet {
+		padding-right: 0;
+		margin-bottom: $spacing-lg;
+	}
+
+	@include mobile-sm {
+		margin-bottom: $spacing-md;
+	}
 }
 
 .imageContainer {
@@ -32,6 +63,17 @@
 	width: $card-height-lg;
 	position: relative;
 	overflow: hidden;
+
+	@include tablet {
+		width: 300px;
+		height: 300px;
+		align-self: center;
+	}
+
+	@include mobile-sm {
+		width: 250px;
+		height: 250px;
+	}
 }
 
 .infoContainer {
@@ -39,4 +81,13 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: $grid-gap;
+
+	@include tablet {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include mobile-sm {
+		grid-template-columns: 1fr;
+		gap: $spacing-xs;
+	}
 }

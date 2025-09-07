@@ -8,11 +8,25 @@
 	justify-content: space-evenly;
 	height: $navbar-height;
 	background-color: $color-primary;
+	padding: 0 $spacing-sm;
+
+	@include mobile-sm {
+		height: 3.5rem;
+		padding: 0 $spacing-xs;
+		justify-content: space-between;
+	}
 }
 
 .navbarLinks {
 	color: $color-secondary;
 	transition: color 0.2s ease;
+	font-size: 1rem;
+	
+	@include mobile-sm {
+		font-size: 0.9rem;
+		padding: $spacing-xs;
+	}
+
 	&:hover {
 		color: $color-text-secondary;
 	}

@@ -4,21 +4,47 @@
 .main {
 	@include container-padding;
 	@include flex-column;
+
+	@include mobile-sm {
+		padding: $spacing-sm;
+	}
 }
 
 .header {
 	@include flex-column;
 	width: $container-width-sm;
 	text-wrap: balance;
+
+	@include tablet {
+		width: 90%;
+	}
+
+	@include mobile-sm {
+		width: 100%;
+	}
 }
+
 .headerTitle {
 	@include flex-column;
+
+	h1 {
+		@include mobile-sm {
+			font-size: 1.8rem;
+			text-align: center;
+		}
+	}
 }
 
 .buttons {
 	@include flex-row;
 	gap: $spacing-lg;
 	margin: $spacing-sm;
+
+	@include mobile-sm {
+		@include flex-column;
+		gap: $spacing-sm;
+		width: 100%;
+	}
 }
 
 .button {
@@ -27,6 +53,13 @@
 	padding: $spacing-sm $spacing-xl;
 	margin-bottom: $spacing-lg;
 	@include hover-darken;
+
+	@include mobile-sm {
+		margin-bottom: $spacing-sm;
+		padding: $spacing-sm $spacing-lg;
+		width: 100%;
+		max-width: 300px;
+	}
 }
 
 .featuresGrid {
@@ -36,6 +69,15 @@
 	gap: $grid-gap;
 	padding-top: $spacing-sm;
 	margin-bottom: $spacing-lg;
+
+	@include tablet {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@include mobile-sm {
+		grid-template-columns: 1fr;
+		gap: $spacing-md;
+	}
 }
 .bold {
 	font-weight: bold;

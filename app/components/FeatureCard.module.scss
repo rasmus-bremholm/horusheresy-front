@@ -6,4 +6,16 @@
 	@include hover-darken;
 	height: $card-height-sm;
 	padding: $spacing-sm $spacing-2xl;
+
+	@include tablet {
+		padding: $spacing-sm $spacing-lg;
+		height: auto;
+		min-height: 250px;
+	}
+
+	@include mobile-sm {
+		padding: $spacing-md;
+		height: auto;
+		min-height: 200px;
+	}
 }

@@ -14,6 +14,7 @@
 
 ### 1.0.1
 - [ ] Try it button for testing api ( start page )
+- [ ] Replace News section with a news widget. And redirect the news feed to a dedicated news page.
 - [ ] Color Data for legions. Have it render somewhere on the /legions/[id] page.
 - [ ] Resume CSS work. (maybe 1.0.1 release)
 - [ ] Expand API with primarch endpoint?

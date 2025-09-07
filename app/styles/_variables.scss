@@ -33,6 +33,13 @@ $color-success: #059669; // 2xx responses
 $color-warning: #d97706; // 4xx responses
 $color-error: #dc2626; // 5xx responses
 
+// Breakpoints
+$breakpoint-xs: 320px;
+$breakpoint-sm: 600px;
+$breakpoint-md: 900px;
+$breakpoint-lg: 1200px;
+$breakpoint-xl: 1535px;
+
 // Spacing System
 $spacing-xs: 0.5rem; // 8px
 $spacing-sm: 1rem;   // 16px  

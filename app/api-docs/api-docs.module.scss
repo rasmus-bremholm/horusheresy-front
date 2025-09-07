@@ -8,6 +8,16 @@
 	padding: $spacing-2xl;
 	gap: $grid-gap;
 	line-height: 1.5rem;
+
+	@include tablet {
+		@include flex-column;
+		padding: $spacing-lg;
+	}
+
+	@include mobile-sm {
+		padding: $spacing-sm;
+		margin-top: 0;
+	}
 }
 
 .endpointContainer {
@@ -15,6 +25,14 @@
 	align-items: flex-start;
 	max-width: $container-width-lg;
 	padding-bottom: $spacing-lg;
+
+	@include tablet {
+		max-width: 100%;
+	}
+
+	@include mobile-sm {
+		padding-bottom: $spacing-md;
+	}
 }
 
 .funfactContainer {
@@ -36,10 +54,21 @@
 	display: flex;
 	gap: $spacing-sm;
 	align-items: center;
+
+	@include mobile-sm {
+		@include flex-column;
+		align-items: flex-start;
+		gap: $spacing-xs;
+	}
+
 	.method {
 		background-color: $color-get;
 		color: $color-gray-100;
 		padding: $spacing-xs;
+		
+		@include mobile-sm {
+			font-size: 0.9rem;
+		}
 	}
 }
 
@@ -73,18 +102,36 @@
 	display: flex;
 	gap: $spacing-sm;
 	margin-bottom: $spacing-sm;
+	flex-wrap: wrap;
+
+	@include mobile-sm {
+		gap: $spacing-xs;
+	}
+
 	.parameterType {
 		border: 2px solid $color-primary;
 		padding: 0 $spacing-xs;
+		
+		@include mobile-sm {
+			font-size: 0.85rem;
+		}
 	}
 	.optional {
 		background-color: $color-primary;
 		color: $color-secondary;
 		padding: 0 $spacing-xs;
+		
+		@include mobile-sm {
+			font-size: 0.85rem;
+		}
 	}
 	.required {
 		background-color: $color-error;
 		color: $color-secondary;
 		padding: 0 $spacing-xs;
+		
+		@include mobile-sm {
+			font-size: 0.85rem;
+		}
 	}
 }

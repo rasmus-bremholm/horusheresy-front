@@ -7,6 +7,18 @@
 	height: $card-height-md;
 	padding: $spacing-sm $spacing-xl;
 	position: relative;
+
+	@include tablet {
+		height: auto;
+		min-height: 280px;
+		padding: $spacing-sm $spacing-lg;
+	}
+
+	@include mobile-sm {
+		height: auto;
+		min-height: 220px;
+		padding: $spacing-md;
+	}
 }
 
 .legionNumber {
