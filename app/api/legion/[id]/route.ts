@@ -23,7 +23,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 			data: {
 				legionInfo: legionQuery.rows[0],
 				primarch: primarchQuery.rows[0],
-				characters: charactersQuerie.rows[0],
+				characters: charactersQuerie.rows,
 			},
 		};
 
