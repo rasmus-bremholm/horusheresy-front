@@ -6,6 +6,10 @@ export async function GET(request: NextRequest) {
 		const { searchParams } = new URL(request.url);
 		const traitorParam = searchParams.get("traitor");
 		const legionIdParam = searchParams.get("legion_id");
+		const sort = searchParams.get("sort");
+		const order = searchParams.get("order");
+
+		const validSortFields = ["name", "discovery_order", "legion_id"];
 
 		if (legionIdParam && (isNaN(parseInt(legionIdParam)) || parseInt(legionIdParam) < 1)) {
 			return NextResponse.json({
@@ -23,6 +27,11 @@ export async function GET(request: NextRequest) {
 
 		let query = "SELECT * FROM primarchs";
 		const params: any[] = [];
+
+		if (sort && validSortFields.includes(sort)) {
+			const sortOrder = order === "desc" ? "DESC" : "ASC";
+			query += ` ORDER BY ${sort} ${sortOrder}`;
+		}
 
 		if (traitorParam && legionIdParam) {
 			query += " WHERE traitor = $1 AND legion_id = $2";
