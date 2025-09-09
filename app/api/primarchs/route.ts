@@ -28,16 +28,6 @@ export async function GET(request: NextRequest) {
 		let query = "SELECT * FROM primarchs";
 		const params: any[] = [];
 
-		if (sort && validSortFields.includes(sort)) {
-			const sortOrder = order === "desc" ? "DESC" : "ASC";
-			query += ` ORDER BY ${sort} ${sortOrder}`;
-		}
-
-		// Defaults to sorting on legion ID
-		if (!sort) {
-			query += " ORDER BY legion_id ASC";
-		}
-
 		if (traitorParam && legionIdParam) {
 			query += " WHERE traitor = $1 AND legion_id = $2";
 			params.push(traitorParam, parseInt(legionIdParam));
@@ -47,6 +37,16 @@ export async function GET(request: NextRequest) {
 		} else if (legionIdParam) {
 			query += " WHERE legion_id = $1";
 			params.push(parseInt(legionIdParam));
+		}
+
+		if (sort && validSortFields.includes(sort)) {
+			const sortOrder = order === "desc" ? "DESC" : "ASC";
+			query += ` ORDER BY ${sort} ${sortOrder}`;
+		}
+
+		// Defaults to sorting on legion ID
+		if (!sort) {
+			query += " ORDER BY legion_id ASC";
 		}
 
 		const { rows: primarchs } = await pool.query(query, params);
