@@ -27,6 +27,10 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 			},
 		};
 
+		if (legionQuery.rows.length === 0) {
+			return NextResponse.json({ error: "Legion not found" }, { status: 404 });
+		}
+
 		return NextResponse.json(response, {
 			headers: {
 				"Cache-Control": "public, s-maxage=3600, stale-while-revalidate=3600",
