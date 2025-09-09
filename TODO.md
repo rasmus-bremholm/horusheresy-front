@@ -1,5 +1,5 @@
-
 ### 1.0.0
+
 - [x] Finish Typescript Conversion of all files.
     - [x] Legions/page.tsx
     - [x] FrontPage
@@ -13,11 +13,18 @@
 - [x] Move Traitor to a query parameter for /api/legions ?
 
 ### 1.0.1
-- [ ] Try it button for testing api ( start page )
-- [ ] Replace News section with a news widget. And redirect the news feed to a dedicated news page.
-- [ ] Color Data for legions. Have it render somewhere on the /legions/[id] page.
-- [ ] Resume CSS work. (maybe 1.0.1 release)
-- [ ] Expand API with primarch endpoint?
-- [ ] Expand with more endpoints. (post 1.0.1)
+
+- [x] Try it button for testing api ( start page )
+- [x] Replace News section with a news widget. And redirect the news feed to a dedicated news page.
+- [ ] ( Boring ) Color Data for legions. Have it render somewhere on the /legions/[id] page.
+- [x] Resume CSS work. (maybe 1.0.1 release)
+- [x] Expand API with primarch endpoint?
+
+### 1.0.2
+
+- [x] Add the /characters endpoint with matching query params.
+- [ ] Update the examples page with new structure from /legion/:id
+- [ ] Update all the documentation to API 1.0.2 standard.
+- [ ] Systems Endpoint
 
 https://docs.x.com/x-api/posts/get-posts-by-ids

@@ -15,6 +15,8 @@ export default async function Legions() {
 	const legions: Legion[] = await getLegions();
 	legions?.sort((a, b) => a.id - b.id);
 
+	
+
 	return (
 		<main className={styles.main}>
 			<h1>Legions Page</h1>

@@ -1,12 +1,22 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { tryEndpoint } from "../lib/actions";
 import Code from "./Code";
 import styles from "./TryItSection.module.scss";
 
 export default function TryItSection() {
+	const [isMounted, setIsMounted] = useState(false);
 	const [response, setResponse] = useState<any>(null);
 	const [loading, setLoading] = useState(false);
+
+	// Avoiding Hydration message
+	useEffect(() => {
+		setIsMounted(true);
+	}, []);
+
+	if (!isMounted) {
+		return <div className={styles.tryitSection}>...</div>;
+	}
 
 	const handleSubmit = async (formData: FormData) => {
 		console.log("handleSubmit");

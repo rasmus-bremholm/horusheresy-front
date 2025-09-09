@@ -11,6 +11,9 @@ interface PageProps {
 export default async function LegionDetails({ params }: PageProps) {
 	const { id } = await params;
 	const legion = await getLegion(id);
+
+	console.log(legion);
+
 	return (
 		<main className={styles.legionMain}>
 			<div className={styles.legionContainer}>
