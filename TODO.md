@@ -22,7 +22,7 @@
 
 ### 1.0.2
 
-- [ ] Add the /characters endpoint with matching query params.
+- [x] Add the /characters endpoint with matching query params.
 - [ ] Update the examples page with new structure from /legion/:id
 - [ ] Update all the documentation to API 1.0.2 standard.
 - [ ] Systems Endpoint
