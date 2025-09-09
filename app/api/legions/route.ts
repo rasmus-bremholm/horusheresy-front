@@ -5,13 +5,30 @@ export async function GET(request: NextRequest) {
 	try {
 		const { searchParams } = new URL(request.url);
 		const traitorParam = searchParams.get("traitor");
+		const sort = searchParams.get("sort");
+		const order = searchParams.get("order");
+
+		const validSortFields = ["name", "id", "size"];
 
 		let query = "SELECT * FROM legions";
 		const params: any[] = [];
 
-		if (traitorParam !== null) {
+		if (traitorParam) {
 			query += " WHERE traitor = $1";
 			params.push(traitorParam === "true");
+		}
+
+		if (traitorParam && !["true", "false"].includes(traitorParam)) {
+			return NextResponse.json({ error: "traitor must be 'true' or 'false'" }, { status: 400 });
+		}
+
+		if (sort && validSortFields.includes(sort)) {
+			const sortOrder = order === "desc" ? "DESC" : "ASC";
+			query += ` ORDER BY ${sort} ${sortOrder}`;
+		}
+
+		if (!sort) {
+			query += ` ORDER BY id ASC`;
 		}
 
 		const { rows: legions } = await pool.query(query, params);
