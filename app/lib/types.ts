@@ -63,6 +63,14 @@ export interface AllContentQuery {
 	endpoints: ApiEndPoint[];
 }
 
+export interface LegionApiResponse {
+	data: {
+		legionInfo: LegionInfo;
+		primarch: Primarch;
+		characters: Character[];
+	};
+}
+
 export interface Legion {
 	id: number;
 	name: string;
@@ -70,23 +78,57 @@ export interface Legion {
 	primarch: string;
 	traitor: boolean;
 	homeworld: string;
-	colors?: LegionColors;
+	//colors?: LegionColors;
 	size: number;
-	characters: Characters[] | null;
+	characters: Character[] | null;
 	quote: string | null;
 	battlecry: string | null;
 	img_thumb: string | null;
 	image: string | "";
 }
 
-export interface LegionColors {
-	primary: string;
-	secondary: string;
-	accent: string;
+export interface LegionInfo {
+	id: string;
+	name: string;
+	description: string;
+	traitor: boolean;
+	homeworld: string;
+	size: string;
+	quote: string | null;
+	battlecry: string | null;
+	img_thumb: string | null;
+	image: string | null;
+	colors_id: string | null;
+	system_id: string | null;
+	created_at: string;
+	updated_at: string;
 }
 
-export interface Characters {
+export interface Primarch {
+	id: string;
 	name: string;
+	legion_id: string;
+	discovery_order: number;
+	homeworld: string | null;
+	status: string;
+	description: string | null;
+	created_at: string;
+	updated_at: string;
+	traitor: boolean;
+}
+
+export interface Character {
+	id: string;
+	name: string;
+	title: string | null;
+	legion_id: string;
+	rank: string;
+	description: string;
+	status: string;
+	notable_for: string;
+	created_at: string;
+	updated_at: string;
+	traitor: boolean;
 }
 
 export interface FeatureCardProps {
