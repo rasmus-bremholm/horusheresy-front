@@ -1,4 +1,4 @@
-import { Inter, EB_Garamond } from "next/font/google";
+import { Inter, IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.scss";
 import Navbar from "./components/Navbar";
@@ -7,7 +7,6 @@ import Divider from "./components/Divider";
 import { ReactNode } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
-const garamond = EB_Garamond({ subsets: ["latin"] });
 
 interface LayoutProps {
 	children: ReactNode;

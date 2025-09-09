@@ -2,12 +2,25 @@ import styles from "../legions.module.scss";
 import getLegion from "../../lib/getLegion";
 import Image from "next/image";
 import { LegionApiResponse } from "@/app/lib/types";
+import { IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
 
 interface PageProps {
 	params: Promise<{
 		id: string;
 	}>;
 }
+
+const fellEnglish = IM_Fell_English({
+	subsets: ["latin"],
+	weight: ["400"],
+	variable: "--font-fell-english",
+});
+
+const fellEnglishSC = IM_Fell_English_SC({
+	subsets: ["latin"],
+	weight: ["400"],
+	variable: "--font-fell-english-sc",
+});
 
 export default async function LegionDetails({ params }: PageProps) {
 	const { id } = await params;
@@ -16,7 +29,7 @@ export default async function LegionDetails({ params }: PageProps) {
 	const { legionInfo, primarch, characters } = response.data;
 
 	return (
-		<main className={styles.legionMain}>
+		<main className={`${styles.legionMain} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>
 			<div className={styles.legionContainer}>
 				<h1>{legionInfo.name}</h1>
 				<p>{legionInfo.description}</p>
