@@ -33,6 +33,11 @@ export async function GET(request: NextRequest) {
 			query += ` ORDER BY ${sort} ${sortOrder}`;
 		}
 
+		// Defaults to sorting on legion ID
+		if (!sort) {
+			query += " ORDER BY legion_id ASC";
+		}
+
 		if (traitorParam && legionIdParam) {
 			query += " WHERE traitor = $1 AND legion_id = $2";
 			params.push(traitorParam, parseInt(legionIdParam));
