@@ -30,20 +30,24 @@ export default async function LegionDetails({ params }: PageProps) {
 
 	return (
 		<main className={`${styles.legionMain} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>
-			<div className={styles.legionContainer}>
-				<h1>{legionInfo.name}</h1>
-				<p>{legionInfo.description}</p>
-				<div className={styles.infoContainer}>
-					<div className={styles.info}>Homeworld: {legionInfo.homeworld}</div>
-					<div className={styles.info}>Army Size: {legionInfo.size}</div>
-					<div className={styles.info}>Primarch: {primarch.name}</div>
+			<section className={styles.gridWrapper}>
+				<header className={styles.legionHeader}>
+					<h1 className={styles.fontHeading}>{legionInfo.name}</h1>
+				</header>
+				<div className={styles.legionInfo}>
+					<h2 className={styles.fontHeading}>Legion</h2>
 				</div>
-			</div>
-			{legionInfo.image && (
-				<div className={styles.imageContainer}>
-					<Image src={legionInfo.image} width={400} height={400} alt={primarch.name} />
-				</div>
-			)}
+				<aside className={styles.primarchInfo}>
+					<h3 className={styles.fontHeading}>Primarch</h3>
+					<h2 className={styles.fontHeading}>{primarch.name}</h2>
+					<p>{primarch.description}</p>
+				</aside>
+				<section className={styles.charactersInfo}>
+					<h2 className={styles.fontHeading}>Characters</h2>characterInfo
+				</section>
+			</section>
 		</main>
 	);
 }
+
+// className={styles.fontHeading}

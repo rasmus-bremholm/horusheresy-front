@@ -23,8 +23,12 @@
 ### 1.0.2
 
 - [x] Add the /characters endpoint with matching query params.
-- [ ] Update the examples page with new structure from /legion/:id
-- [ ] Update all the documentation to API 1.0.2 standard.
+- [x] Update the examples page with new structure from /legion/:id
+- [x] Update all the documentation to API 1.0.2 standard.
 - [ ] Systems Endpoint
+
+### 1.0.3
+
+- [ ] Update the Examples /legion/:id page to new design.
 
 https://docs.x.com/x-api/posts/get-posts-by-ids

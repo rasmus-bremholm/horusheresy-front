@@ -18,18 +18,24 @@ const fellEnglish = IM_Fell_English({
 	variable: "--font-fell-english",
 });
 
+const fellEnglishSC = IM_Fell_English_SC({
+	subsets: ["latin"],
+	weight: ["400"],
+	variable: "--font-fell-english-sc",
+});
+
 export default async function Legions() {
 	const legions: Legion[] = await getLegions();
 	legions?.sort((a, b) => a.id - b.id);
 
 	return (
-		<main className={styles.main}>
+		<main className={`${styles.main} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>
 			<h1>Legions Page</h1>
 			<p>
 				Here you will find all the active legions beeing used from the API For moore info on how this was achived, please visit the{" "}
 				<Link href='/api-docs'>API Documentation.</Link>
 			</p>
-			<section className={`${styles.cardSection} ${fellEnglish.className}`}>
+			<section className={styles.cardSection}>
 				{legions.map((legion) => (
 					<Link key={legion.id} href={`/legions/${legion.id}`}>
 						<Card id={legion.id} name={legion.name} />
