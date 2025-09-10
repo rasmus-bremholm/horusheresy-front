@@ -3,6 +3,7 @@ import getLegion from "../../lib/getLegion";
 import Image from "next/image";
 import { LegionApiResponse } from "@/app/lib/types";
 import { IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
+import Divider from "@/app/components/Divider";
 
 interface PageProps {
 	params: Promise<{
@@ -32,18 +33,32 @@ export default async function LegionDetails({ params }: PageProps) {
 		<main className={`${styles.legionMain} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>
 			<section className={styles.gridWrapper}>
 				<header className={styles.legionHeader}>
-					<h1 className={styles.fontHeading}>{legionInfo.name}</h1>
+					<h1>{legionInfo.name}</h1>
+					<Divider />
 				</header>
 				<div className={styles.legionInfo}>
-					<h2 className={styles.fontHeading}>Legion</h2>
+					<div className={styles.quickInfoWrapper}>
+						<h2>Legion</h2>
+						<span>Homeworld:</span>
+						<span>{legionInfo.homeworld}</span>
+						<span>Allegiance:</span>
+						<span>{legionInfo.traitor ? "Traitor" : "Loyalist"}</span>
+						<span>Army Size:</span>
+						<span>{legionInfo.size}</span>
+					</div>
+					<div>
+						<h2>Description</h2>
+						{legionInfo.description}
+					</div>
+					<Divider />
 				</div>
-				<aside className={styles.primarchInfo}>
-					<h3 className={styles.fontHeading}>Primarch</h3>
-					<h2 className={styles.fontHeading}>{primarch.name}</h2>
+				<div className={styles.primarchInfo}>
+					<h3>Primarch</h3>
+					<h2>{primarch.name}</h2>
 					<p>{primarch.description}</p>
-				</aside>
+				</div>
 				<section className={styles.charactersInfo}>
-					<h2 className={styles.fontHeading}>Characters</h2>characterInfo
+					<h2>Characters</h2>characterInfo
 				</section>
 			</section>
 		</main>
