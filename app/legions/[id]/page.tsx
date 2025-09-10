@@ -4,12 +4,16 @@ import Image from "next/image";
 import { LegionApiResponse } from "@/app/lib/types";
 import { IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
 import Divider from "@/app/components/Divider";
+import fs from "fs";
+import path from "path";
 
 interface PageProps {
 	params: Promise<{
 		id: string;
 	}>;
 }
+
+// In your component
 
 const fellEnglish = IM_Fell_English({
 	subsets: ["latin"],
@@ -54,6 +58,7 @@ export default async function LegionDetails({ params }: PageProps) {
 				</div>
 				<div className={styles.primarchInfo}>
 					<h3>Primarch</h3>
+					<Image height={350} width={350} src={`/public/primarchs/${primarch.id}.png`} alt={`${primarch.name} portrait`} />
 					<h2>{primarch.name}</h2>
 					<p>{primarch.description}</p>
 				</div>
@@ -66,3 +71,4 @@ export default async function LegionDetails({ params }: PageProps) {
 }
 
 // className={styles.fontHeading}
+//public\primarchs\3.png
