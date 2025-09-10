@@ -1,13 +1,7 @@
-/*
-/legions - lean collection (just legion data, maybe primarch name)
-/legion/:id - rich detail view (legion + full primarch + all characters)
-/characters - characters collection with filtering
-/primarchs - what you already built
-
-*/
 import { NextRequest, NextResponse } from "next/server";
 import pool from "@/app/lib/database";
 
+// Characters
 export async function GET(request: NextRequest) {
 	try {
 		const { searchParams } = new URL(request.url);
@@ -34,8 +28,6 @@ export async function GET(request: NextRequest) {
 		let query = "SELECT * FROM characters";
 		const params: any[] = [];
 
-
-
 		if (traitorParam && legionIdParam) {
 			query += " WHERE traitor = $1 AND legion_id = $2";
 			params.push(traitorParam, parseInt(legionIdParam));
@@ -47,7 +39,7 @@ export async function GET(request: NextRequest) {
 			params.push(parseInt(legionIdParam));
 		}
 
-      if (sort && validSortFields.includes(sort)) {
+		if (sort && validSortFields.includes(sort)) {
 			const sortOrder = order === "desc" ? "DESC" : "ASC";
 			query += ` ORDER BY ${sort} ${sortOrder}`;
 		}

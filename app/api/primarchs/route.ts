@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import pool from "../../lib/database";
 
+// Primarchs
 export async function GET(request: NextRequest) {
 	try {
 		const { searchParams } = new URL(request.url);
