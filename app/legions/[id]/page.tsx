@@ -5,6 +5,7 @@ import { LegionApiResponse } from "@/app/lib/types";
 import { IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
 import Divider from "@/app/components/Divider";
 import PrimarchPortrait from "@/app/components/PrimarchPortrait";
+import getSuffix from "@/app/lib/getSuffix";
 
 interface PageProps {
 	params: Promise<{
@@ -59,12 +60,21 @@ export default async function LegionDetails({ params }: PageProps) {
 						<PrimarchPortrait height={300} width={300} alt='test' image={`/primarchs/${legionInfo.id}.png`} />
 						<h2>{primarch.name}</h2>
 						<p>{primarch.description}</p>
-						<p>Discovered: {primarch.discovery_order}th</p>
+						<p>
+							Discovered: {primarch.discovery_order}
+							{getSuffix(primarch.discovery_order)}
+						</p>
 					</div>
 				)}
 				{characters && (
 					<section className={styles.charactersInfo}>
-						<h2>Characters</h2>characterInfo
+						<h2>Characters</h2>
+						{characters.slice(0, 3).map((character) => (
+							<div key={character.id}>
+								<h4>{character.name}</h4>
+								<p>{character.title}</p>
+							</div>
+						))}
 					</section>
 				)}
 			</section>
