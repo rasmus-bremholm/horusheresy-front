@@ -4,16 +4,13 @@ import Image from "next/image";
 import { LegionApiResponse } from "@/app/lib/types";
 import { IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
 import Divider from "@/app/components/Divider";
-import fs from "fs";
-import path from "path";
+import PrimarchPortrait from "@/app/components/PrimarchPortrait";
 
 interface PageProps {
 	params: Promise<{
 		id: string;
 	}>;
 }
-
-// In your component
 
 const fellEnglish = IM_Fell_English({
 	subsets: ["latin"],
@@ -56,15 +53,20 @@ export default async function LegionDetails({ params }: PageProps) {
 					</div>
 					<Divider />
 				</div>
-				<div className={styles.primarchInfo}>
-					<h3>Primarch</h3>
-					<Image height={350} width={350} src={`/public/primarchs/${primarch.id}.png`} alt={`${primarch.name} portrait`} />
-					<h2>{primarch.name}</h2>
-					<p>{primarch.description}</p>
-				</div>
-				<section className={styles.charactersInfo}>
-					<h2>Characters</h2>characterInfo
-				</section>
+				{primarch && (
+					<div className={styles.primarchInfo}>
+						<h3>Primarch</h3>
+						<PrimarchPortrait height={300} width={300} alt='test' image={`/primarchs/${legionInfo.id}.png`} />
+						<h2>{primarch.name}</h2>
+						<p>{primarch.description}</p>
+						<p>Discovered: {primarch.discovery_order}th</p>
+					</div>
+				)}
+				{characters && (
+					<section className={styles.charactersInfo}>
+						<h2>Characters</h2>characterInfo
+					</section>
+				)}
 			</section>
 		</main>
 	);
