@@ -2,7 +2,7 @@ import styles from "./Card.module.scss";
 import Image from "next/image";
 
 interface CardProps {
-	id: number;
+	id: string;
 	name: string;
 }
 

@@ -4,13 +4,8 @@ import Link from "next/link";
 import Card from "../components/Card";
 import getLegions from "../lib/getLegions";
 import styles from "./legions.module.scss";
-import type { Legion } from "../lib/types";
 import { IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
-
-export const metadata = {
-	title: "Horus Heresy API Examples",
-	description: "Welcome to the Horus Heresy API. A restful API for everything Horus Heresy!",
-};
+import type { Metadata } from "next";
 
 const fellEnglish = IM_Fell_English({
 	subsets: ["latin"],
@@ -24,9 +19,29 @@ const fellEnglishSC = IM_Fell_English_SC({
 	variable: "--font-fell-english-sc",
 });
 
+export async function generateMetadata(): Promise<Metadata> {
+	return {
+		title: "Legions of the Horus Heresy -  Horus Heresy API",
+		description: "Here you will fins examples of the API in use, used to generate the pages of all the different legions during the Horus Heresy",
+		openGraph: {
+			title: "Legions of the Horus Heresy -  Horus Heresy API",
+			description: "All Legions, using the Horus Heresy API",
+			url: "https://horus-heresy-next.vercel.app/legions/",
+			siteName: "Horus Heresy API",
+			locale: "en_US",
+			type: "website",
+		},
+		twitter: {
+			card: "summary",
+			title: "Legions of the Horus Heresy -  Horus Heresy API",
+			description: "Legions Examples, using the Horus Heresy API",
+		},
+	};
+}
+
 export default async function Legions() {
-	const legions: Legion[] = await getLegions();
-	legions?.sort((a, b) => a.id - b.id);
+	const legions = await getLegions();
+	legions?.sort((a, b) => parseInt(a.id) - parseInt(b.id));
 
 	return (
 		<main className={`${styles.main} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>

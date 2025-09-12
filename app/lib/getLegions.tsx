@@ -1,6 +1,6 @@
-import type { Legion } from "./types";
+import type { Legion, LegionInfo } from "./types";
 
-export default async function getLegions(): Promise<Legion[]> {
+export default async function getLegions(): Promise<LegionInfo[]> {
 	const apiKey = process.env.API_KEY;
 	if (!apiKey) {
 		throw new Error("Missing Api key in header");
