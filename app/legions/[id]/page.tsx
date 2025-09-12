@@ -1,12 +1,13 @@
 import styles from "../legions.module.scss";
 import card from "../../components/Card.module.scss";
 import getLegion from "../../lib/getLegion";
-import Image from "next/image";
 import { LegionApiResponse } from "@/app/lib/types";
 import { IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
 import Divider from "@/app/components/Divider";
 import PrimarchPortrait from "@/app/components/PrimarchPortrait";
 import getSuffix from "@/app/lib/getSuffix";
+
+import type { Metadata } from "next";
 
 interface PageProps {
 	params: Promise<{
@@ -25,6 +26,31 @@ const fellEnglishSC = IM_Fell_English_SC({
 	weight: ["400"],
 	variable: "--font-fell-english-sc",
 });
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+	const { id } = await params;
+	const response: LegionApiResponse = await getLegion(id);
+
+	const { legionInfo, primarch, characters } = response.data;
+
+	return {
+		title: `${legionInfo.name} - Horus Heresy API`,
+		description: legionInfo.description?.substring(0, 160) + "...",
+		openGraph: {
+			title: `${legionInfo.name} - The ${legionInfo.id}${getSuffix(parseInt(legionInfo.id))} Legion`,
+			description: legionInfo.description,
+			url: `https://horus-heresy-next.vercel.app/legions/${id}`,
+			siteName: "Horus Heresy API",
+			locale: "en_US",
+			type: "website",
+		},
+		twitter: {
+			card: "summary",
+			title: `${legionInfo.name} - Horus Heresy API`,
+			description: legionInfo.description?.substring(0, 160) + "...",
+		},
+	};
+}
 
 export default async function LegionDetails({ params }: PageProps) {
 	const { id } = await params;
