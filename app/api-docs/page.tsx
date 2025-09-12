@@ -4,8 +4,28 @@ import { DOC_NEWS_ENDPOINT_QUERY } from "../lib/queries";
 import { client } from "../lib/sanity";
 import EndPoint from "../components/EndPoint";
 import DocPage from "../components/DocPage";
-import NewsPage from "../components/NewsArticle";
 import Divider from "../components/Divider";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+	return {
+		title: "API Documentation -  Horus Heresy API",
+		description: "Learn about the different endpoints and paramters avalible for the Horus Heresy API",
+		openGraph: {
+			title: "API Documentation -  Horus Heresy API",
+			description: "Learn about the different endpoints and parameters avalible for the Horus Heresy API",
+			url: "https://horus-heresy-next.vercel.app/legions/",
+			siteName: "Horus Heresy API",
+			locale: "en_US",
+			type: "website",
+		},
+		twitter: {
+			card: "summary",
+			title: "API Documentation -  Horus Heresy API",
+			description: "Learn about the different endpoints and parameters avalible for the Horus Heresy API",
+		},
+	};
+}
 
 export default async function Apidocs() {
 	const data: AllContentQuery = await client.fetch(DOC_NEWS_ENDPOINT_QUERY, {}, { next: { revalidate: 30 } });
