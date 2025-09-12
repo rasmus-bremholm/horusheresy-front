@@ -1,4 +1,5 @@
 import styles from "../legions.module.scss";
+import card from "../../components/Card.module.scss";
 import getLegion from "../../lib/getLegion";
 import Image from "next/image";
 import { LegionApiResponse } from "@/app/lib/types";
@@ -69,18 +70,19 @@ export default async function LegionDetails({ params }: PageProps) {
 				{characters && (
 					<section className={styles.charactersInfo}>
 						<h2>Characters</h2>
-						{characters.slice(0, 3).map((character) => (
-							<div key={character.id}>
-								<h4>{character.name}</h4>
-								<p>{character.title}</p>
-							</div>
-						))}
+						<div className={styles.wrapper}>
+							{characters.slice(0, 4).map((character) => (
+								<div key={character.id} className={card.characterCard}>
+									<h4>{character.name}</h4>
+									<p>{character.title}</p>
+									<p>{character.rank}</p>
+									<p>{character.notable_for}</p>
+								</div>
+							))}
+						</div>
 					</section>
 				)}
 			</section>
 		</main>
 	);
 }
-
-// className={styles.fontHeading}
-//public\primarchs\3.png

@@ -80,6 +80,12 @@
 .charactersInfo {
 	grid-column: span 3;
 	text-align: left;
+	.wrapper {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 1rem;
+	}
 }
 
 .cardSection {
