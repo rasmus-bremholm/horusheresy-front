@@ -5,20 +5,31 @@ import Card from "../components/Card";
 import getLegions from "../lib/getLegions";
 import styles from "./legions.module.scss";
 import type { Legion } from "../lib/types";
+import { IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
 
 export const metadata = {
 	title: "Horus Heresy API Examples",
 	description: "Welcome to the Horus Heresy API. A restful API for everything Horus Heresy!",
 };
 
+const fellEnglish = IM_Fell_English({
+	subsets: ["latin"],
+	weight: ["400"],
+	variable: "--font-fell-english",
+});
+
+const fellEnglishSC = IM_Fell_English_SC({
+	subsets: ["latin"],
+	weight: ["400"],
+	variable: "--font-fell-english-sc",
+});
+
 export default async function Legions() {
 	const legions: Legion[] = await getLegions();
 	legions?.sort((a, b) => a.id - b.id);
 
-	
-
 	return (
-		<main className={styles.main}>
+		<main className={`${styles.main} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>
 			<h1>Legions Page</h1>
 			<p>
 				Here you will find all the active legions beeing used from the API For moore info on how this was achived, please visit the{" "}

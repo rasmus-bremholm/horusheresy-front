@@ -21,6 +21,12 @@
 	}
 }
 
+.characterCard {
+	@include card-base;
+	padding: $spacing-sm;
+	text-align: left;
+}
+
 .legionNumber {
 	font-size: 2rem;
 	line-height: 3rem;

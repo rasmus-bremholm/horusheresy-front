@@ -20,6 +20,72 @@
 		padding: $spacing-sm;
 		margin: $spacing-md 0;
 	}
+
+	h3 {
+		font-weight: 500;
+	}
+
+	font-family: var(--font-fell-english) !important;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-fell-english-sc) !important;
+	}
+	div {
+		margin-top: 2rem;
+	}
+	line-height: 1.5;
+}
+
+.gridWrapper {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem 1rem;
+	min-height: 150px;
+	* {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.legionHeader {
+	grid-column: span 3;
+	grid-row: 1/2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.legionInfo {
+	grid-column: span 2;
+	grid-row: 2/3;
+	text-align: left;
+	.quickInfoWrapper {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		h2 {
+			grid-column: span 2;
+		}
+	}
+}
+.primarchInfo {
+	grid-row: 2/3;
+	text-align: left;
+}
+.charactersInfo {
+	grid-column: span 3;
+	text-align: left;
+	.wrapper {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 1rem;
+	}
 }
 
 .cardSection {
@@ -41,53 +107,20 @@
 	}
 }
 
-.legionContainer {
-	@include flex-column;
-	text-align: left;
-	padding-right: $spacing-lg;
-	flex: 1;
-
-	@include tablet {
-		padding-right: 0;
-		margin-bottom: $spacing-lg;
-	}
-
-	@include mobile-sm {
-		margin-bottom: $spacing-md;
-	}
+// Fell English Font Classes - Override global Inter font
+.fontHeading {
+	font-family: var(--font-fell-english-sc) !important;
 }
 
-.imageContainer {
-	border: 1px solid $color-border;
-	height: $card-height-lg;
-	width: $card-height-lg;
-	position: relative;
-	overflow: hidden;
-
-	@include tablet {
-		width: 300px;
-		height: 300px;
-		align-self: center;
-	}
-
-	@include mobile-sm {
-		width: 250px;
-		height: 250px;
-	}
+.fontRegular {
+	font-family: var(--font-fell-english) !important;
 }
 
-.infoContainer {
-	margin-top: $spacing-sm;
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: $grid-gap;
+.fontSmallCaps {
+	font-family: var(--font-fell-english-sc) !important;
+}
 
-	@include tablet {
-		grid-template-columns: repeat(2, 1fr);
-	}
-
-	@include mobile-sm {
-		grid-template-columns: 1fr;
-		gap: $spacing-xs;
-	}
+// Apply Fell English to specific sections
+.cardSection {
+	font-family: var(--font-fell-english) !important;
 }

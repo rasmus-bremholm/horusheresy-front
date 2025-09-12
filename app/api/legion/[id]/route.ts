@@ -5,6 +5,7 @@ interface RouteParams {
 	params: Promise<{ id: string }>;
 }
 
+// /LEGION/:ID
 export async function GET(request: NextRequest, { params }: RouteParams) {
 	const { id } = await params;
 	const legionId = parseInt(id, 10);

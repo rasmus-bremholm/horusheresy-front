@@ -1,4 +1,4 @@
-import { Inter } from "next/font/google";
+import { Inter, IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.scss";
 import Navbar from "./components/Navbar";
