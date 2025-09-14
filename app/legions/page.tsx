@@ -6,6 +6,7 @@ import getLegions from "../lib/getLegions";
 import styles from "./legions.module.scss";
 import { IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
 import type { Metadata } from "next";
+import { ApiSchemas } from "../components/ApiSchemas";
 
 const fellEnglish = IM_Fell_English({
 	subsets: ["latin"],
@@ -44,19 +45,34 @@ export default async function Legions() {
 	legions?.sort((a, b) => parseInt(a.id) - parseInt(b.id));
 
 	return (
-		<main className={`${styles.main} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>
-			<h1>Legions Page</h1>
-			<p>
-				Here you will find all the active legions beeing used from the API For moore info on how this was achived, please visit the{" "}
-				<Link href='/api-docs'>API Documentation.</Link>
-			</p>
-			<section className={styles.cardSection}>
-				{legions.map((legion) => (
-					<Link key={legion.id} href={`/legions/${legion.id}`}>
-						<Card id={legion.id} name={legion.name} />
-					</Link>
-				))}
-			</section>
-		</main>
+		<>
+			<ApiSchemas
+				type='dataset'
+				data={{
+					dataset: {
+						name: "Space Marine Legions Examples",
+						description: "Complete list of all 20 Space Marine Legions from the Horus Heresy era",
+						keywords: ["Space Marines", "Legions", "Horus Heresy", "Warhammer 30k"],
+						size: 20,
+						format: ["JSON"],
+					},
+					url: "https://horus-heresy-next.vercel.app/legions",
+				}}
+			/>
+			<main className={`${styles.main} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>
+				<h1>Legions Page</h1>
+				<p>
+					Here you will find all the active legions beeing used from the API For moore info on how this was achived, please visit the{" "}
+					<Link href='/api-docs'>API Documentation.</Link>
+				</p>
+				<section className={styles.cardSection}>
+					{legions.map((legion) => (
+						<Link key={legion.id} href={`/legions/${legion.id}`}>
+							<Card id={legion.id} name={legion.name} />
+						</Link>
+					))}
+				</section>
+			</main>
+		</>
 	);
 }
