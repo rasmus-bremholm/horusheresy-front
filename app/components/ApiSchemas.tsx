@@ -1,5 +1,6 @@
 import type { EndpointInfo, DatasetInfo } from "../lib/schemas/apiSchemas";
 import StructuredData from "./StructuredData";
+import { generateApiSchema, generateOrganizationSchema, generateDatasetSchema, generateApiDocSchema, generateWebApiSchema } from "./StructuredData";
 
 interface ApiSchemasProps {
 	type: "homepage" | "api-docs" | "endpoint" | "dataset" | "example";

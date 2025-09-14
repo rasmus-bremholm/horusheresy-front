@@ -1,4 +1,4 @@
-import { Inter, IM_Fell_English, IM_Fell_English_SC } from "next/font/google";
+import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.scss";
 import Navbar from "./components/Navbar";
@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Divider from "./components/Divider";
 import { ReactNode } from "react";
 import type { Metadata } from "next";
+import { ApiSchemas } from "./components/ApiSchemas";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -69,6 +70,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps) {
 	return (
 		<html lang='en'>
+			<head>
+				<ApiSchemas type='homepage' />
+			</head>
 			<body className={inter.className}>
 				<Navbar />
 				{children}

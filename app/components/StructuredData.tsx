@@ -77,35 +77,60 @@ export function generateDatasetSchema(datasetInfo: DatasetInfo, baseUrl: string)
 
 // Generate TechArticle schema for API documentation pages
 export function generateApiDocSchema(title: string, description: string, url: string) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": title,
-    "description": description,
-    "url": url,
-    "author": {
-      "@type": "Person",
-      "name": "Rasmus Bremholm"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Horus Heresy API",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://horus-heresy-next.vercel.app/favicon.ico"
-      }
-    },
-    "datePublished": "2024-01-01", // Use your actual publish date
-    "dateModified": new Date().toISOString().split('T')[0],
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": url
-    },
-    "articleSection": "API Documentation",
-    "keywords": ["API", "REST", "Warhammer 40K", "Horus Heresy", "Documentation"],
-    "proficiencyLevel": "Intermediate",
-    "dependencies": "HTTP Client"
-  };
+	return {
+		"@context": "https://schema.org",
+		"@type": "TechArticle",
+		headline: title,
+		description: description,
+		url: url,
+		author: {
+			"@type": "Person",
+			name: "Rasmus Bremholm",
+		},
+		publisher: {
+			"@type": "Organization",
+			name: "Horus Heresy API",
+			logo: {
+				"@type": "ImageObject",
+				url: "https://horus-heresy-next.vercel.app/favicon.ico",
+			},
+		},
+		datePublished: "2024-01-01", // Use your actual publish date
+		dateModified: new Date().toISOString().split("T")[0],
+		mainEntityOfPage: {
+			"@type": "WebPage",
+			"@id": url,
+		},
+		articleSection: "API Documentation",
+		keywords: ["API", "REST", "Warhammer 40K", "Horus Heresy", "Documentation"],
+		proficiencyLevel: "Intermediate",
+		dependencies: "HTTP Client",
+	};
+}
+
+// Im not really sure about this one, how it works.
+export function generateWebApiSchema(endpoint: EndpointInfo, baseUrl: string) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "WebAPI",
+		name: `${endpoint.method} ${endpoint.path}`,
+		description: endpoint.description,
+		url: `${baseUrl}${endpoint.path}`,
+		documentation: `${baseUrl}/api-docs`,
+		provider: {
+			"@type": "Organization",
+			name: "Horus Heresy API",
+		},
+		termsOfService: `${baseUrl}/terms`,
+		potentialAction: {
+			"@type": "SearchAction",
+			target: {
+				"@type": "EntryPoint",
+				urlTemplate: `${baseUrl}${endpoint.path}`,
+				httpMethod: endpoint.method,
+			},
+		},
+	};
 }
 
 // Generate Organization schema for site-wide use
