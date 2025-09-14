@@ -95,7 +95,7 @@ export function generateApiDocSchema(title: string, description: string, url: st
 				url: "https://horus-heresy-next.vercel.app/favicon.ico",
 			},
 		},
-		datePublished: "2024-01-01", // Use your actual publish date
+		datePublished: "2025-01-01", // Project started in 2025
 		dateModified: new Date().toISOString().split("T")[0],
 		mainEntityOfPage: {
 			"@type": "WebPage",
@@ -108,7 +108,7 @@ export function generateApiDocSchema(title: string, description: string, url: st
 	};
 }
 
-// Im not really sure about this one, how it works.
+// Generate WebAPI schema for individual endpoints
 export function generateWebApiSchema(endpoint: EndpointInfo, baseUrl: string) {
 	return {
 		"@context": "https://schema.org",
@@ -121,7 +121,6 @@ export function generateWebApiSchema(endpoint: EndpointInfo, baseUrl: string) {
 			"@type": "Organization",
 			name: "Horus Heresy API",
 		},
-		termsOfService: `${baseUrl}/terms`,
 		potentialAction: {
 			"@type": "SearchAction",
 			target: {
@@ -156,11 +155,125 @@ export function generateOrganizationSchema() {
 			url: "https://rasmusbremholm.com/contact",
 		},
 		sameAs: [
-			// Add your social media profiles here
-			"https://github.com/rasmus-bremholm",
+			"https://github.com/Visceral89",
 			"https://rasmusbremholm.com",
-			// "https://twitter.com/yourusername"
 		],
 		knowsAbout: ["Warhammer 40000", "Horus Heresy", "Space Marines", "API Development", "REST APIs", "JSON"],
+	};
+}
+
+// Generate WebSite schema for homepage
+export function generateWebSiteSchema() {
+	return {
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		name: "Horus Heresy API",
+		description: "The ultimate Warhammer 40K Horus Heresy database and RESTful API",
+		url: "https://horus-heresy-next.vercel.app",
+		potentialAction: {
+			"@type": "SearchAction",
+			target: {
+				"@type": "EntryPoint",
+				urlTemplate: "https://horus-heresy-next.vercel.app/legions/{search_term_string}",
+			},
+			"query-input": "required name=search_term_string",
+		},
+		publisher: {
+			"@type": "Organization",
+			name: "Horus Heresy API",
+		},
+		inLanguage: "en-US",
+	};
+}
+
+// Generate news page schema
+export function generateNewsPageSchema(title: string, description: string, url: string, newsItems: any[]) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "CollectionPage",
+		name: title,
+		description: description,
+		url: url,
+		mainEntity: {
+			"@type": "ItemList",
+			itemListElement: newsItems.slice(0, 10).map((item, index) => ({
+				"@type": "ListItem",
+				position: index + 1,
+				item: {
+					"@type": "Article",
+					headline: item.title,
+					datePublished: item.publishedAt,
+					url: `${url}/${item._id}`,
+				},
+			})),
+		},
+		breadcrumb: {
+			"@type": "BreadcrumbList",
+			itemListElement: [
+				{
+					"@type": "ListItem",
+					position: 1,
+					name: "Home",
+					item: "https://horus-heresy-next.vercel.app",
+				},
+				{
+					"@type": "ListItem",
+					position: 2,
+					name: "News",
+					item: url,
+				},
+			],
+		},
+	};
+}
+
+// Generate individual news article schema
+export function generateNewsArticleSchema(newsItem: any, baseUrl: string) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "Article",
+		headline: newsItem.title,
+		datePublished: newsItem.publishedAt,
+		dateModified: newsItem.publishedAt,
+		author: {
+			"@type": "Person",
+			name: "Rasmus Bremholm",
+		},
+		publisher: {
+			"@type": "Organization",
+			name: "Horus Heresy API",
+			logo: {
+				"@type": "ImageObject",
+				url: `${baseUrl}/favicon.ico`,
+			},
+		},
+		url: `${baseUrl}/news/${newsItem._id}`,
+		mainEntityOfPage: {
+			"@type": "WebPage",
+			"@id": `${baseUrl}/news/${newsItem._id}`,
+		},
+		articleSection: "API Updates",
+		keywords: ["Horus Heresy API", "Updates", "News", "API Development"],
+		...(newsItem.featured && {
+			isAccessibleForFree: true,
+			hasPart: {
+				"@type": "WebPageElement",
+				isAccessibleForFree: true,
+			},
+		}),
+	};
+}
+
+// Generate breadcrumb schema
+export function generateBreadcrumbSchema(breadcrumbs: { name: string; url: string }[]) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		itemListElement: breadcrumbs.map((crumb, index) => ({
+			"@type": "ListItem",
+			position: index + 1,
+			name: crumb.name,
+			item: crumb.url,
+		})),
 	};
 }

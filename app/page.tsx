@@ -4,16 +4,19 @@ import Link from "next/link";
 import Divider from "./components/Divider";
 import FeatureCard from "./components/FeatureCard";
 import TryItSection from "./components/TryItSection";
+import { ApiSchemas } from "./components/ApiSchemas";
 
 export default function Home() {
 	return (
-		<main className={styles.main}>
+		<>
+			<ApiSchemas type="homepage" />
+			<main className={styles.main}>
 			<div className={styles.header}>
 				<div className={styles.headerTitle}>
 					<h1 className={styles.heading1}>Welcome to the Horus Heresy API</h1>
 					<p className={styles.subHeading1}>
-						A REST API by Rasmus Bremholm. The API provides useful information about both Loyalist and Traitor legion present during the Horus
-						Heresy. Acess this data in your website, app or anything you can think of!
+						A REST API by Rasmus Bremholm. The API provides useful information about both Loyalist and Traitor legions present during the Horus
+						Heresy. Access this data in your website, app or anything you can think of!
 					</p>
 				</div>
 			</div>
@@ -36,7 +39,7 @@ export default function Home() {
 					<Link href='/api-docs'>
 						<span className={styles.bold}>API documentation</span>
 					</Link>{" "}
-					for moore info and all the API endpoints.
+					for more info and all the API endpoints.
 				</p>
 				<div className={styles.featuresGrid}>
 					<FeatureCard cardTitle='Specific Legion' cardDesc='Get all info about a single legion by id.' cardImgUrl='/icons/Army.svg' />
@@ -48,5 +51,6 @@ export default function Home() {
 				</div>
 			</section>
 		</main>
+		</>
 	);
 }

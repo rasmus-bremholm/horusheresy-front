@@ -1,15 +1,18 @@
 import type { EndpointInfo, DatasetInfo } from "../lib/schemas/apiSchemas";
 import StructuredData from "./StructuredData";
-import { generateApiSchema, generateOrganizationSchema, generateDatasetSchema, generateApiDocSchema, generateWebApiSchema } from "./StructuredData";
+import { generateApiSchema, generateOrganizationSchema, generateDatasetSchema, generateApiDocSchema, generateWebApiSchema, generateNewsPageSchema, generateNewsArticleSchema, generateBreadcrumbSchema, generateWebSiteSchema } from "./StructuredData";
 
 interface ApiSchemasProps {
-	type: "homepage" | "api-docs" | "endpoint" | "dataset" | "example";
+	type: "homepage" | "api-docs" | "endpoint" | "dataset" | "example" | "news" | "news-article";
 	data?: {
 		title?: string;
 		description?: string;
 		url?: string;
 		endpoint?: EndpointInfo;
 		dataset?: DatasetInfo;
+		newsItems?: any[];
+		newsItem?: any;
+		breadcrumbs?: { name: string; url: string }[];
 		[key: string]: any;
 	};
 }
@@ -25,16 +28,31 @@ export function ApiSchemas({ type, data = {} }: ApiSchemasProps) {
 
 		switch (type) {
 			case "homepage":
+				// Add WebSite schema for homepage
+				schemas.push(generateWebSiteSchema());
 				schemas.push(
 					generateApiSchema({
 						name: "Horus Heresy API",
 						version: "1.0.3",
 						description:
-							"The ultimate Warhammer 40K Horus Heresy database and RESTful API. Explore all 20 Space Marine Legions, primarchs, characters, and battles.",
+							"The ultimate Warhammer 40K Horus Heresy database and RESTful API. Explore all 20 Space Marine Legions, primarchs, characters, and battles from the Horus Heresy era.",
 						baseUrl,
 						documentation: `${baseUrl}/api-docs`,
 						author: "Rasmus Bremholm",
 					})
+				);
+				// Add dataset schema for the main data
+				schemas.push(
+					generateDatasetSchema(
+						{
+							name: "Horus Heresy Legion Database",
+							description: "Complete dataset of all 20 Space Marine Legions from the Horus Heresy era, including primarchs, characters, and battle information",
+							keywords: ["Warhammer 40K", "Horus Heresy", "Space Marines", "Legions", "Primarchs", "30K", "Games Workshop"],
+							size: 20,
+							format: ["JSON"],
+						},
+						baseUrl
+					)
 				);
 				break;
 
@@ -66,6 +84,28 @@ export function ApiSchemas({ type, data = {} }: ApiSchemasProps) {
 					generateApiDocSchema(data.title || "API Example", data.description || "Example of Horus Heresy API in action", data.url || baseUrl)
 				);
 				break;
+
+			case "news":
+				schemas.push(
+					generateNewsPageSchema(
+						data.title || "News & Updates - Horus Heresy API",
+						data.description || "Latest project updates and new features for the Horus Heresy API",
+						data.url || `${baseUrl}/news`,
+						data.newsItems || []
+					)
+				);
+				break;
+
+			case "news-article":
+				if (data.newsItem) {
+					schemas.push(generateNewsArticleSchema(data.newsItem, baseUrl));
+				}
+				break;
+		}
+
+		// Add breadcrumbs if provided
+		if (data.breadcrumbs) {
+			schemas.push(generateBreadcrumbSchema(data.breadcrumbs));
 		}
 
 		return schemas;

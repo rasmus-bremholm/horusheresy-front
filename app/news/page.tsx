@@ -3,6 +3,7 @@ import { NewsItem } from "../lib/types";
 import styles from "../api-docs/api-docs.module.scss";
 import NewsArticle from "../components/NewsArticle";
 import type { Metadata } from "next";
+import { ApiSchemas } from "../components/ApiSchemas";
 
 export async function generateMetadata(): Promise<Metadata> {
 	return {
@@ -11,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
 		openGraph: {
 			title: "News & Updates -  Horus Heresy API",
 			description: "Latest project updates and new features for the Horus Heresy API",
-			url: "https://horus-heresy-next.vercel.app/legions/",
+			url: "https://horus-heresy-next.vercel.app/news",
 			siteName: "Horus Heresy API",
 			locale: "en_US",
 			type: "website",
@@ -32,8 +33,20 @@ export default async function NewsPagePage() {
   *[_type == "newsArticle" && featured != true] | order(publishedAt desc)
 `);
 
+	const allNews = [...featuredNews, ...regularNews];
+
 	return (
-		<main className={styles.main}>
+		<>
+			<ApiSchemas
+				type="news"
+				data={{
+					title: "News & Updates - Horus Heresy API",
+					description: "Latest project updates and new features for the Horus Heresy API",
+					url: "https://horus-heresy-next.vercel.app/news",
+					newsItems: allNews
+				}}
+			/>
+			<main className={styles.main}>
 			<div className={styles.container}>
 				<h1>News</h1>
 				<div>
@@ -46,5 +59,6 @@ export default async function NewsPagePage() {
 				</div>
 			</div>
 		</main>
+		</>
 	);
 }

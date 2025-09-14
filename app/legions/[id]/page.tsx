@@ -69,6 +69,11 @@ export default async function LegionDetails({ params }: PageProps) {
 					title: `${legionInfo.name} - API Example`,
 					description: `Example of fetching ${legionInfo.name} data using the Horus Heresy API`,
 					url: `https://horus-heresy-next.vercel.app/legions/${legionInfo.id}`,
+					breadcrumbs: [
+						{ name: "Home", url: "https://horus-heresy-next.vercel.app" },
+						{ name: "Legions", url: "https://horus-heresy-next.vercel.app/legions" },
+						{ name: legionInfo.name, url: `https://horus-heresy-next.vercel.app/legions/${legionInfo.id}` }
+					]
 				}}
 			/>
 			<main className={`${styles.legionMain} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>

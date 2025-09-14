@@ -11,11 +11,11 @@ import { ApiSchemas } from "../components/ApiSchemas";
 export async function generateMetadata(): Promise<Metadata> {
 	return {
 		title: "API Documentation -  Horus Heresy API",
-		description: "Learn about the different endpoints and paramters avalible for the Horus Heresy API",
+		description: "Learn about the different endpoints and parameters available for the Horus Heresy API",
 		openGraph: {
 			title: "API Documentation -  Horus Heresy API",
-			description: "Learn about the different endpoints and parameters avalible for the Horus Heresy API",
-			url: "https://horus-heresy-next.vercel.app/legions/",
+			description: "Learn about the different endpoints and parameters available for the Horus Heresy API",
+			url: "https://horus-heresy-next.vercel.app/api-docs",
 			siteName: "Horus Heresy API",
 			locale: "en_US",
 			type: "website",
@@ -23,15 +23,13 @@ export async function generateMetadata(): Promise<Metadata> {
 		twitter: {
 			card: "summary",
 			title: "API Documentation -  Horus Heresy API",
-			description: "Learn about the different endpoints and parameters avalible for the Horus Heresy API",
+			description: "Learn about the different endpoints and parameters available for the Horus Heresy API",
 		},
 	};
 }
 
 export default async function Apidocs() {
 	const data: AllContentQuery = await client.fetch(DOC_NEWS_ENDPOINT_QUERY, {}, { next: { revalidate: 30 } });
-
-	console.log(data);
 
 	return (
 		<>
@@ -41,6 +39,10 @@ export default async function Apidocs() {
 					title: "API Documentation - Horus Heresy API",
 					description: "The complete REST API documentation for Horus Heresy data",
 					url: "https://horus-heresy-next.vercel.app/api-docs",
+					breadcrumbs: [
+						{ name: "Home", url: "https://horus-heresy-next.vercel.app" },
+						{ name: "API Documentation", url: "https://horus-heresy-next.vercel.app/api-docs" }
+					]
 				}}
 			/>
 			<main className={styles.main}>
