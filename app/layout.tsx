@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 	authors: [{ name: "Rasmus Bremholm" }],
 	openGraph: {
 		title: "Horus Heresy API - By Rasmus Bremholm",
-		description: "The ultimate Warhammer 40K Horus Heresy database and RESTful API",
+		description: "The ultimate Warhammer 30K Horus Heresy database and RESTful API",
 		url: "https://horus-heresy-next.vercel.app",
 		siteName: "Horus Heresy API",
 		locale: "en_US",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
 		],
 	},
 	twitter: {
-		card: "summary_large_image",
+		card: "summary",
 		title: "Horus Heresy API",
-		description: "The ultimate Warhammer 40K Horus Heresy database and RESTful API",
+		description: "The ultimate Warhammer 30K Horus Heresy database and RESTful API",
 		images: ["/api/og"],
 	},
 	robots: {
