@@ -24,7 +24,7 @@ export async function GET(req: Request) {
 						alignItems: "center",
 						justifyContent: "center",
 						flexDirection: "column",
-						color: "whitesmoke",
+						color: "#141414",
 						fontFamily: "IM Fell English",
 					}}>
 					<h1
@@ -62,7 +62,7 @@ export async function GET(req: Request) {
 					alignItems: "center",
 					justifyContent: "center",
 					flexDirection: "column",
-					color: "whitesmoke",
+					color: "#141414",
 					fontFamily: "IM Fell English",
 				}}>
 				<h1
