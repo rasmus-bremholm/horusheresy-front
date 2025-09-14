@@ -49,13 +49,8 @@ export default async function Legions() {
 			<ApiSchemas
 				type='example'
 				data={{
-					dataset: {
-						name: "Space Marine Legions Examples",
-						description: "Complete list of all 20 Space Marine Legions from the Horus Heresy era",
-						keywords: ["Space Marines", "Legions", "Horus Heresy", "Warhammer 30k"],
-						size: 20,
-						format: ["JSON"],
-					},
+					title: "Space Marine Legions Examples",
+					description: "Complete list of all 20 Space Marine Legions from the Horus Heresy era",
 					url: "https://horus-heresy-next.vercel.app/legions",
 				}}
 			/>
