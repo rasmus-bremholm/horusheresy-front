@@ -4,9 +4,11 @@ export interface ApiInfo {
 	description: string; // description "Ultimate 30k REST API"
 	baseUrl: string; // "https://horus-heresy-next.vercel.app"
 	documentation: string; //author "Rasmus Bremholm"
+	author: string;
+	license?: string;
 }
 
-export interface ApiInfo {
+export interface DatasetInfo {
 	// This describes what kind of data my API serves
 	name: string; // "Space Marine Legions Dataset"
 	description: string; // All 20 Legions from the Horus Heresy
@@ -15,6 +17,13 @@ export interface ApiInfo {
 	format: string[]; // JSON
 }
 
-interface EndpointInfo{
-   // This SHOULD match my Sanity Schema for the API Endpoint struct.
+export interface EndpointInfo {
+	// This SHOULD match my Sanity Schema for the API Endpoint struct.
+	title: string;
+	method: string;
+	path: string; // /api/legions/{id}
+	slug: string;
+	description: string;
+	parameters?: any[];
+	examples?: any[];
 }
