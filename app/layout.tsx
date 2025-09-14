@@ -18,6 +18,23 @@ export const metadata: Metadata = {
 		default: "Horus Heresy API - By Rasmus Bremholm",
 		template: "%s | Horus Heresy API",
 	},
+	manifest: "/site.webmanifest",
+	icons: {
+		icon: "/favicon.ico",
+		apple: "/apple-touch-icon.png",
+		other: [
+			{
+				rel: "android-chrome",
+				sizes: "192x192",
+				url: "/android-chrome-192x192.png",
+			},
+			{
+				rel: "android-chrome",
+				sizes: "512x512",
+				url: "/android-chrome-512x512.png",
+			},
+		],
+	},
 	description: "The ultimate Warhammer 40K Horus Heresy database and RESTful API. Explore all 20 Space Marine Legions, primarchs, characters, and battles.",
 	keywords: ["Horus Heresy", "Warhammer 40K", "Space Marines", "API", "Database", "Legions"],
 	authors: [{ name: "Rasmus Bremholm" }],
