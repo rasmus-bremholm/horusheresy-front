@@ -52,6 +52,10 @@ export default async function Legions() {
 					title: "Space Marine Legions Examples",
 					description: "Complete list of all 20 Space Marine Legions from the Horus Heresy era",
 					url: "https://horus-heresy-next.vercel.app/legions",
+					breadcrumbs: [
+						{ name: "Home", url: "https://horus-heresy-next.vercel.app" },
+						{ name: "Legions", url: "https://horus-heresy-next.vercel.app/legions" }
+					]
 				}}
 			/>
 			<main className={`${styles.main} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>

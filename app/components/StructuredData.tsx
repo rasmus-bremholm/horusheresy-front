@@ -161,3 +161,119 @@ export function generateOrganizationSchema() {
 		knowsAbout: ["Warhammer 40000", "Horus Heresy", "Space Marines", "API Development", "REST APIs", "JSON"],
 	};
 }
+
+// Generate WebSite schema for homepage
+export function generateWebSiteSchema() {
+	return {
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		name: "Horus Heresy API",
+		description: "The ultimate Warhammer 40K Horus Heresy database and RESTful API",
+		url: "https://horus-heresy-next.vercel.app",
+		potentialAction: {
+			"@type": "SearchAction",
+			target: {
+				"@type": "EntryPoint",
+				urlTemplate: "https://horus-heresy-next.vercel.app/legions/{search_term_string}",
+			},
+			"query-input": "required name=search_term_string",
+		},
+		publisher: {
+			"@type": "Organization",
+			name: "Horus Heresy API",
+		},
+		inLanguage: "en-US",
+	};
+}
+
+// Generate news page schema
+export function generateNewsPageSchema(title: string, description: string, url: string, newsItems: any[]) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "CollectionPage",
+		name: title,
+		description: description,
+		url: url,
+		mainEntity: {
+			"@type": "ItemList",
+			itemListElement: newsItems.slice(0, 10).map((item, index) => ({
+				"@type": "ListItem",
+				position: index + 1,
+				item: {
+					"@type": "Article",
+					headline: item.title,
+					datePublished: item.publishedAt,
+					url: `${url}/${item._id}`,
+				},
+			})),
+		},
+		breadcrumb: {
+			"@type": "BreadcrumbList",
+			itemListElement: [
+				{
+					"@type": "ListItem",
+					position: 1,
+					name: "Home",
+					item: "https://horus-heresy-next.vercel.app",
+				},
+				{
+					"@type": "ListItem",
+					position: 2,
+					name: "News",
+					item: url,
+				},
+			],
+		},
+	};
+}
+
+// Generate individual news article schema
+export function generateNewsArticleSchema(newsItem: any, baseUrl: string) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "Article",
+		headline: newsItem.title,
+		datePublished: newsItem.publishedAt,
+		dateModified: newsItem.publishedAt,
+		author: {
+			"@type": "Person",
+			name: "Rasmus Bremholm",
+		},
+		publisher: {
+			"@type": "Organization",
+			name: "Horus Heresy API",
+			logo: {
+				"@type": "ImageObject",
+				url: `${baseUrl}/favicon.ico`,
+			},
+		},
+		url: `${baseUrl}/news/${newsItem._id}`,
+		mainEntityOfPage: {
+			"@type": "WebPage",
+			"@id": `${baseUrl}/news/${newsItem._id}`,
+		},
+		articleSection: "API Updates",
+		keywords: ["Horus Heresy API", "Updates", "News", "API Development"],
+		...(newsItem.featured && {
+			isAccessibleForFree: true,
+			hasPart: {
+				"@type": "WebPageElement",
+				isAccessibleForFree: true,
+			},
+		}),
+	};
+}
+
+// Generate breadcrumb schema
+export function generateBreadcrumbSchema(breadcrumbs: { name: string; url: string }[]) {
+	return {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		itemListElement: breadcrumbs.map((crumb, index) => ({
+			"@type": "ListItem",
+			position: index + 1,
+			name: crumb.name,
+			item: crumb.url,
+		})),
+	};
+}

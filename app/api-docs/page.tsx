@@ -39,6 +39,10 @@ export default async function Apidocs() {
 					title: "API Documentation - Horus Heresy API",
 					description: "The complete REST API documentation for Horus Heresy data",
 					url: "https://horus-heresy-next.vercel.app/api-docs",
+					breadcrumbs: [
+						{ name: "Home", url: "https://horus-heresy-next.vercel.app" },
+						{ name: "API Documentation", url: "https://horus-heresy-next.vercel.app/api-docs" }
+					]
 				}}
 			/>
 			<main className={styles.main}>
