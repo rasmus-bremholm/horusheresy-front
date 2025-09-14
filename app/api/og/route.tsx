@@ -2,7 +2,7 @@
 
 import { ImageResponse } from "@vercel/og";
 
-const fontUrl = 'https://fonts.googleapis.com/css2?family=IM+Fell+English:wght@400&display=swap';
+const fontUrl = "https://fonts.googleapis.com/css2?family=IM+Fell+English:wght@400&display=swap";
 
 export async function GET(req: Request) {
 	// This generates a legion specific OG image based on the data i fetch. Like legion name and number.
@@ -10,16 +10,14 @@ export async function GET(req: Request) {
 	const legion = searchParams.get("legion");
 	const legionNumber = searchParams.get("number") || "XX";
 
-	const fontData = await fetch(
-		new URL('https://fonts.gstatic.com/s/imfellenglish/v18/Ktk6ALSMeZjqPXneuFCgdg.woff2')
-	).then((res) => res.arrayBuffer());
+	const fontData = await fetch(new URL("https://fonts.gstatic.com/s/imfellenglish/v18/Ktk6ALSMeZjqPXneuFCgdg.woff2")).then((res) => res.arrayBuffer());
 
 	if (!legion) {
 		return new ImageResponse(
 			(
 				<div
 					style={{
-						background: "linear-gradient(135deg, #1a1a2e, #16213e)",
+						background: "linear-gradient(135deg, #F7F7FC, #D1D3E0)",
 						width: "100%",
 						height: "100%",
 						display: "flex",
@@ -44,9 +42,9 @@ export async function GET(req: Request) {
 				height: 630,
 				fonts: [
 					{
-						name: 'IM Fell English',
+						name: "IM Fell English",
 						data: fontData,
-						style: 'normal',
+						style: "normal",
 					},
 				],
 			}
@@ -57,7 +55,7 @@ export async function GET(req: Request) {
 		(
 			<div
 				style={{
-					background: "linear-gradient(135deg, #1a1a2e, #16213e)",
+					background: "linear-gradient(135deg, #F7F7FC, #D1D3E0)",
 					width: "100%",
 					height: "100%",
 					display: "flex",
@@ -82,9 +80,9 @@ export async function GET(req: Request) {
 			height: 630,
 			fonts: [
 				{
-					name: 'IM Fell English',
+					name: "IM Fell English",
 					data: fontData,
-					style: 'normal',
+					style: "normal",
 				},
 			],
 		}
