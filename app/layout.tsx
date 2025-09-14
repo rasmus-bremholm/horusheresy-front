@@ -15,6 +15,7 @@ interface LayoutProps {
 }
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://horus-heresy-next.vercel.app'),
 	title: {
 		default: "Horus Heresy API - By Rasmus Bremholm",
 		template: "%s | Horus Heresy API",
