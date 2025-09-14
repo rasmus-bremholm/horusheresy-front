@@ -23,22 +23,27 @@ The application uses a dual data layer:
 ### API Layer
 
 **Route Structure:**
+
 - `/api/legions` - All legions with optional `?traitor=true/false` query parameter
 - `/api/legion/[id]` - Individual legion by ID
 - `/api/test` - Test endpoint, not used. Just for testing.
+- `/api/primarchs` - Get all primarchs or pass in a legion for specific ones.
 
 **Security:** All API routes are protected by API key middleware (`middleware.js`) that validates `x-api-key` header.
 
 ### Frontend Structure
 
 **Core Pages:**
+
 - `/` - Landing page with feature overview
 - `/legions` - Legion listing page
 - `/legions/[id]` - Individual legion detail pages
 - `/api-docs` - API documentation (Sanity CMS powered)
 - `/studio/[[...index]]` - Sanity Studio admin interface
+- `/news` - News and Updates to the API
 
 **Component Architecture:**
+
 - Shared layout with `Navbar`, `Footer`, and `Divider` components
 - Feature cards, code examples, and documentation sections
 - SCSS modules for styling with organized structure in `app/styles/`
@@ -46,6 +51,7 @@ The application uses a dual data layer:
 ### Sanity CMS Integration
 
 The CMS manages documentation through these schema types:
+
 - `apiEndpoint` - API endpoint documentation with parameters, responses, code examples
 - `docPage` - General documentation pages
 - `newsArticle` - News and updates
@@ -56,6 +62,7 @@ The CMS manages documentation through these schema types:
 ### Styling System
 
 Uses **SCSS** with a structured approach:
+
 - `app/styles/_variables.scss` - Design tokens
 - `app/styles/_base.scss` - Base styles
 - `app/styles/components/` - Component-specific styles
@@ -63,20 +70,15 @@ Uses **SCSS** with a structured approach:
 - `app/styles/utilities/` - Utility classes
 - Component-level `.module.scss` files for scoped styles
 
-#### CSS System Status
-✅ **Completed (v1.0.0):**
-1. ~~Convert deprecated `@import` statements to `@use` syntax~~
-2. ~~Replace deprecated `darken()` and `lighten()` functions with `color.adjust()`~~
-3. ~~Implement design system variables consistently across components~~
-4. ~~Clean up component-specific SCSS modules~~
-5. ~~Add comprehensive responsive breakpoints (XS: 320px, SM: 600px, MD: 900px, LG: 1200px, XL: 1535px)~~
 
 ##### Current File Structure
+
 - `/app/styles/` - Clean design system with variables, mixins, and responsive breakpoints
 - `/app/components/*.module.scss` - Now following design system patterns consistently
 - `/app/api-docs/api-docs.module.scss` - Responsive and optimized
 
 #### Design System
+
 - Black/white minimalist theme
 - Using CSS Modules
 - highlight.js for syntax highlighting
@@ -85,6 +87,7 @@ Uses **SCSS** with a structured approach:
 ### Environment Configuration
 
 Required environment variables:
+
 - `POSTGRES_URL` - Database connection
 - `API_KEY` - API authentication
 - `NEXT_PUBLIC_SANITY_PROJECT_ID` - Sanity project ID
@@ -92,20 +95,12 @@ Required environment variables:
 
 ## Project Roadmap
 
-### Version 1.0.0 ✅ COMPLETE
-- [x] Finish TypeScript conversion of all files
-- [x] Break out API documentation into Sanity CMS components  
-- [x] Add collapse/expand logic for code examples and responses
-- [x] Implement syntax highlighting (highlight.js)
-- [x] Complete parameter/response documentation from Sanity
-- [x] Move traitor filtering to query parameter (`/api/legions?traitor=true/false`)
-- [x] CSS system overhaul with responsive design
-
 ### Version 1.0.1 (Planned)
-- [ ] **Try It button** - Interactive API testing from homepage
-- [ ] **Legion colors** - Display color data on `/legions/[id]` pages  
-- [ ] **Primarch endpoint** - Expand API with dedicated primarch data
-- [ ] **Additional endpoints** - Further API expansion
+
+- [x] **Try It button** - Interactive API testing from homepage
+- [ ] **Legion colors** - Display color data on `/legions/[id]` pages
+- [x] **Primarch endpoint** - Expand API with dedicated primarch data
+- [] **Additional endpoints** - Further API expansion
 
 ### Development Notes
 

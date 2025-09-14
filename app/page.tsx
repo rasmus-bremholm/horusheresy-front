@@ -4,9 +4,11 @@ import Link from "next/link";
 import Divider from "./components/Divider";
 import FeatureCard from "./components/FeatureCard";
 import TryItSection from "./components/TryItSection";
+import { ApiSchemas } from "./components/ApiSchemas";
 
 export default function Home() {
 	return (
+		<><ApiSchemas type="homepage"/>
 		<main className={styles.main}>
 			<div className={styles.header}>
 				<div className={styles.headerTitle}>
@@ -48,5 +50,6 @@ export default function Home() {
 				</div>
 			</section>
 		</main>
+		</>
 	);
 }
