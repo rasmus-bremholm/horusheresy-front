@@ -45,11 +45,20 @@ export const metadata: Metadata = {
 		siteName: "Horus Heresy API",
 		locale: "en_US",
 		type: "website",
+		images: [
+			{
+				url: "/api/og",
+				width: 1200,
+				height: 630,
+				alt: "Horus Heresy API - Warhammer 30K REST API",
+			},
+		],
 	},
 	twitter: {
-		card: "summary",
+		card: "summary_large_image",
 		title: "Horus Heresy API",
 		description: "The ultimate Warhammer 40K Horus Heresy database and RESTful API",
+		images: ["/api/og"],
 	},
 	robots: {
 		index: true,
