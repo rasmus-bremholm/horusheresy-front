@@ -40,14 +40,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 			title: `${legionInfo.name} - The ${legionInfo.id}${getSuffix(parseInt(legionInfo.id))} Legion`,
 			description: legionInfo.description,
 			url: `https://horus-heresy-next.vercel.app/legions/${id}`,
+			images: `/api/og?legion=${legionInfo.name}&number=${legionInfo.id}`,
 			siteName: "Horus Heresy API",
 			locale: "en_US",
 			type: "website",
 		},
 		twitter: {
-			card: "summary",
+			card: "summary_large_image",
 			title: `${legionInfo.name} - Horus Heresy API`,
 			description: legionInfo.description?.substring(0, 160) + "...",
+			images: [`/api/og?legion=${legionInfo.name}&number=${legionInfo.id}`],
 		},
 	};
 }
