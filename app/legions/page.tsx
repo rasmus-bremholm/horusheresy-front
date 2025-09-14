@@ -47,7 +47,7 @@ export default async function Legions() {
 	return (
 		<>
 			<ApiSchemas
-				type='dataset'
+				type='example'
 				data={{
 					dataset: {
 						name: "Space Marine Legions Examples",
