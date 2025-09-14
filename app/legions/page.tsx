@@ -23,7 +23,7 @@ const fellEnglishSC = IM_Fell_English_SC({
 export async function generateMetadata(): Promise<Metadata> {
 	return {
 		title: "Legions of the Horus Heresy -  Horus Heresy API",
-		description: "Here you will fins examples of the API in use, used to generate the pages of all the different legions during the Horus Heresy",
+		description: "Here you will find examples of the API in use, used to generate the pages of all the different legions during the Horus Heresy",
 		openGraph: {
 			title: "Legions of the Horus Heresy -  Horus Heresy API",
 			description: "All Legions, using the Horus Heresy API",
@@ -57,7 +57,7 @@ export default async function Legions() {
 			<main className={`${styles.main} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>
 				<h1>Legions Page</h1>
 				<p>
-					Here you will find all the active legions beeing used from the API For moore info on how this was achived, please visit the{" "}
+					Here you will find all the active legions being used from the API. For more info on how this was achieved, please visit the{" "}
 					<Link href='/api-docs'>API Documentation.</Link>
 				</p>
 				<section className={styles.cardSection}>

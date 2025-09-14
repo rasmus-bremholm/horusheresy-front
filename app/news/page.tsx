@@ -11,7 +11,7 @@ export async function generateMetadata(): Promise<Metadata> {
 		openGraph: {
 			title: "News & Updates -  Horus Heresy API",
 			description: "Latest project updates and new features for the Horus Heresy API",
-			url: "https://horus-heresy-next.vercel.app/legions/",
+			url: "https://horus-heresy-next.vercel.app/news",
 			siteName: "Horus Heresy API",
 			locale: "en_US",
 			type: "website",

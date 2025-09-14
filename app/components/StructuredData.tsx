@@ -95,7 +95,7 @@ export function generateApiDocSchema(title: string, description: string, url: st
 				url: "https://horus-heresy-next.vercel.app/favicon.ico",
 			},
 		},
-		datePublished: "2024-01-01", // Use your actual publish date
+		datePublished: "2025-01-01", // Project started in 2025
 		dateModified: new Date().toISOString().split("T")[0],
 		mainEntityOfPage: {
 			"@type": "WebPage",
@@ -108,7 +108,7 @@ export function generateApiDocSchema(title: string, description: string, url: st
 	};
 }
 
-// Im not really sure about this one, how it works.
+// Generate WebAPI schema for individual endpoints
 export function generateWebApiSchema(endpoint: EndpointInfo, baseUrl: string) {
 	return {
 		"@context": "https://schema.org",
@@ -121,7 +121,6 @@ export function generateWebApiSchema(endpoint: EndpointInfo, baseUrl: string) {
 			"@type": "Organization",
 			name: "Horus Heresy API",
 		},
-		termsOfService: `${baseUrl}/terms`,
 		potentialAction: {
 			"@type": "SearchAction",
 			target: {
@@ -156,10 +155,8 @@ export function generateOrganizationSchema() {
 			url: "https://rasmusbremholm.com/contact",
 		},
 		sameAs: [
-			// Add your social media profiles here
-			"https://github.com/rasmus-bremholm",
+			"https://github.com/Visceral89",
 			"https://rasmusbremholm.com",
-			// "https://twitter.com/yourusername"
 		],
 		knowsAbout: ["Warhammer 40000", "Horus Heresy", "Space Marines", "API Development", "REST APIs", "JSON"],
 	};

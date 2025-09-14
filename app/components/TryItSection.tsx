@@ -19,7 +19,6 @@ export default function TryItSection() {
 	}
 
 	const handleSubmit = async (formData: FormData) => {
-		console.log("handleSubmit");
 		setLoading(true);
 		const result = await tryEndpoint(formData);
 		setResponse(result);

@@ -3,8 +3,8 @@ export interface ApiInfo {
 	version: string; // My version number "1.0.3"
 	description: string; // description "Ultimate 30k REST API"
 	baseUrl: string; // "https://horus-heresy-next.vercel.app"
-	documentation: string; //author "Rasmus Bremholm"
-	author: string;
+	documentation: string; // documentation URL "https://horus-heresy-next.vercel.app/api-docs"
+	author: string; // author "Rasmus Bremholm"
 	license?: string;
 }
 
