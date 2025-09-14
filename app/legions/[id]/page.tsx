@@ -8,6 +8,7 @@ import PrimarchPortrait from "@/app/components/PrimarchPortrait";
 import getSuffix from "@/app/lib/getSuffix";
 
 import type { Metadata } from "next";
+import { ApiSchemas } from "@/app/components/ApiSchemas";
 
 interface PageProps {
 	params: Promise<{
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 			type: "website",
 		},
 		twitter: {
-			card: "summary_large_image",
+			card: "summary",
 			title: `${legionInfo.name} - Horus Heresy API`,
 			description: legionInfo.description?.substring(0, 160) + "...",
 			images: [`/api/og?legion=${legionInfo.name}&number=${legionInfo.id}`],
@@ -61,56 +62,66 @@ export default async function LegionDetails({ params }: PageProps) {
 	const { legionInfo, primarch, characters } = response.data;
 
 	return (
-		<main className={`${styles.legionMain} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>
-			<section className={styles.gridWrapper}>
-				<header className={styles.legionHeader}>
-					<h1>{legionInfo.name}</h1>
-					<Divider />
-				</header>
-				<div className={styles.legionInfo}>
-					<div className={styles.quickInfoWrapper}>
-						<h2>Legion</h2>
-						<span>Homeworld:</span>
-						<span>{legionInfo.homeworld}</span>
-						<span>Allegiance:</span>
-						<span>{legionInfo.traitor ? "Traitor" : "Loyalist"}</span>
-						<span>Army Size:</span>
-						<span>{legionInfo.size}</span>
-					</div>
-					<div>
-						<h2>Description</h2>
-						{legionInfo.description}
-					</div>
-					<Divider />
-				</div>
-				{primarch && (
-					<div className={styles.primarchInfo}>
-						<h3>Primarch</h3>
-						<PrimarchPortrait height={300} width={300} alt='test' image={`/primarchs/${legionInfo.id}.png`} />
-						<h2>{primarch.name}</h2>
-						<p>{primarch.description}</p>
-						<p>
-							Discovered: {primarch.discovery_order}
-							{getSuffix(primarch.discovery_order)}
-						</p>
-					</div>
-				)}
-				{characters && (
-					<section className={styles.charactersInfo}>
-						<h2>Characters</h2>
-						<div className={styles.wrapper}>
-							{characters.slice(0, 4).map((character) => (
-								<div key={character.id} className={card.characterCard}>
-									<h4>{character.name}</h4>
-									<p>{character.title}</p>
-									<p>{character.rank}</p>
-									<p>{character.notable_for}</p>
-								</div>
-							))}
+		<>
+			<ApiSchemas
+				type='example'
+				data={{
+					title: `${legionInfo.name} - API Example`,
+					description: `Example of fetching ${legionInfo.name} data using the Horus Heresy API`,
+					url: `https://horus-heresy-next.vercel.app/legions/${legionInfo.id}`,
+				}}
+			/>
+			<main className={`${styles.legionMain} ${fellEnglish.variable} ${fellEnglishSC.variable}`}>
+				<section className={styles.gridWrapper}>
+					<header className={styles.legionHeader}>
+						<h1>{legionInfo.name}</h1>
+						<Divider />
+					</header>
+					<div className={styles.legionInfo}>
+						<div className={styles.quickInfoWrapper}>
+							<h2>Legion</h2>
+							<span>Homeworld:</span>
+							<span>{legionInfo.homeworld}</span>
+							<span>Allegiance:</span>
+							<span>{legionInfo.traitor ? "Traitor" : "Loyalist"}</span>
+							<span>Army Size:</span>
+							<span>{legionInfo.size}</span>
 						</div>
-					</section>
-				)}
-			</section>
-		</main>
+						<div>
+							<h2>Description</h2>
+							{legionInfo.description}
+						</div>
+						<Divider />
+					</div>
+					{primarch && (
+						<div className={styles.primarchInfo}>
+							<h3>Primarch</h3>
+							<PrimarchPortrait height={300} width={300} alt='test' image={`/primarchs/${legionInfo.id}.png`} />
+							<h2>{primarch.name}</h2>
+							<p>{primarch.description}</p>
+							<p>
+								Discovered: {primarch.discovery_order}
+								{getSuffix(primarch.discovery_order)}
+							</p>
+						</div>
+					)}
+					{characters && (
+						<section className={styles.charactersInfo}>
+							<h2>Characters</h2>
+							<div className={styles.wrapper}>
+								{characters.slice(0, 4).map((character) => (
+									<div key={character.id} className={card.characterCard}>
+										<h4>{character.name}</h4>
+										<p>{character.title}</p>
+										<p>{character.rank}</p>
+										<p>{character.notable_for}</p>
+									</div>
+								))}
+							</div>
+						</section>
+					)}
+				</section>
+			</main>
+		</>
 	);
 }
