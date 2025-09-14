@@ -25,7 +25,9 @@ export function middleware(request) {
 	return response;
 }
 
-// Apply middleware only to API routes
+// Apply middleware only to API routes, excluding OG image generation
 export const config = {
-	matcher: "/api/:path*", // Match all API routes
+	matcher: [
+		"/api/((?!og).*)", // Match all API routes except /api/og
+	],
 };
