@@ -53,12 +53,26 @@
 	padding: $spacing-sm $spacing-xl;
 	margin-bottom: $spacing-lg;
 	@include hover-darken;
+	max-height: 86px;
 
 	@include mobile-sm {
 		margin-bottom: $spacing-sm;
 		padding: $spacing-sm $spacing-lg;
 		width: 100%;
 		max-width: 300px;
+	}
+}
+
+.featuredNews {
+	@extend .button;
+	flex-direction: column;
+	max-height: 86px;
+	color: $color-post;
+	border: 1px solid $color-post;
+	transition: all 0.2s ease-in-out;
+	&:hover {
+		background-color: $color-post;
+		color: $color-secondary;
 	}
 }
 
