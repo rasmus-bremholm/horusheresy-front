@@ -7,32 +7,32 @@
 
 ### 1.0.3
 
-- [ ] Update the Examples /legion/:id page to new design.
+- [x] Update the Examples /legion/:id page to new design.
 
 ### SEO Checklist
 
 #### Core Files
 
-- [ ] Robots.txt
-- [ ] Sitemap.xml (dynamic)
-- [ ] Dynamic metadata (Next.js 15)
+- [x] Robots.txt
+- [x] Sitemap.xml (dynamic)
+- [x] Dynamic metadata (Next.js 15)
 
 #### Social Media Cards
 
-- [ ] Open Graph (Facebook, LinkedIn, Discord)
-- [ ] Twitter Cards (X/Twitter)
-- [ ] Custom OG images (auto-generated for each legion?)
+- [x] Open Graph (Facebook, LinkedIn, Discord)
+- [x] Twitter Cards (X/Twitter)
+- [x] Custom OG images (auto-generated for each legion?)
 
 #### Technical SEO
 
-- [ ] Structured data (JSON-LD) - Rich snippets in Google
-- [ ] Canonical URLs - Prevent duplicate content
-- [ ] Meta descriptions - Search result snippets
+- [x] Structured data (JSON-LD) - Rich snippets in Google
+- [x] Canonical URLs - Prevent duplicate content
+- [x] Meta descriptions - Search result snippets
 - [ ] Title tag optimization - Proper hierarchy
 
 #### Nice-to-Have
 
-- [ ] Schema.org markup - Organization, Dataset schemas
-- [ ] Breadcrumb structured data
+- [x] Schema.org markup - Organization, Dataset schemas
+- [x] Breadcrumb structured data
 
 https://docs.x.com/x-api/posts/get-posts-by-ids
