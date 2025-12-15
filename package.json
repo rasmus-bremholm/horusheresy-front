@@ -1,39 +1,39 @@
 {
-	"name": "horusheresy-front",
-	"version": "1.0.3",
-	"private": true,
-	"scripts": {
-		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint"
-	},
-	"dependencies": {
-		"@emotion/react": "^11.14.0",
-		"@emotion/styled": "^11.14.1",
-		"@mui/icons-material": "^7.3.2",
-		"@mui/material": "^7.3.2",
-		"@portabletext/react": "^4.0.2",
-		"@sanity/client": "^7.10.0",
-		"@sanity/code-input": "^6.0.1",
-		"@sanity/image-url": "^1.2.0",
-		"@vercel/analytics": "^1.5.0",
-		"@vercel/kv": "^1.0.1",
-		"@vercel/og": "^0.8.5",
-		"highlight.js": "^11.9.0",
-		"next": "^15.5.2",
-		"next-sanity": "^10.0.15",
-		"pg": "^8.11.3",
-		"react": "^19.1.1",
-		"react-dom": "^19.1.1",
-		"sanity": "^4.6.0",
-		"sass": "^1.69.5"
-	},
-	"devDependencies": {
-		"@sanity/vision": "^4.6.0",
-		"@types/node": "^24.3.0",
-		"@types/pg": "^8.15.5",
-		"@types/react": "^19.1.12",
-		"typescript": "5.9.2"
-	}
+  "name": "horusheresy-front",
+  "version": "1.0.3",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.2",
+    "@mui/material": "^7.3.2",
+    "@portabletext/react": "^4.0.2",
+    "@sanity/client": "^7.10.0",
+    "@sanity/code-input": "^6.0.1",
+    "@sanity/image-url": "^1.2.0",
+    "@vercel/analytics": "^1.5.0",
+    "@vercel/kv": "^1.0.1",
+    "@vercel/og": "^0.8.5",
+    "highlight.js": "^11.9.0",
+    "next": "15.5.9",
+    "next-sanity": "^10.0.15",
+    "pg": "^8.11.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sanity": "^4.6.0",
+    "sass": "^1.69.5"
+  },
+  "devDependencies": {
+    "@sanity/vision": "^4.6.0",
+    "@types/node": "^24.3.0",
+    "@types/pg": "^8.15.5",
+    "@types/react": "^19.1.12",
+    "typescript": "5.9.2"
+  }
 }
